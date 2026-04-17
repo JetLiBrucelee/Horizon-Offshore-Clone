@@ -15,7 +15,7 @@ function escapeHtml(str: string): string {
 
 router.post("/contact", async (req, res) => {
   if (!process.env.RESEND_API_KEY || !process.env.CONTACT_RECIPIENT_EMAIL) {
-    res.status(503).json({ error: "Email service is not configured. Please contact us directly at support@horizondrillingsco.com" });
+    res.status(503).json({ error: "Our contact form is temporarily unavailable. Please try again later or reach out to us directly." });
     return;
   }
 
