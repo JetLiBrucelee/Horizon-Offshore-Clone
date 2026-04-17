@@ -197,13 +197,13 @@
 }
 
 /* Amber accent color */
-.text-teal {
+.text-amber {
   color: #F59E0B;
 }
-.bg-teal {
+.bg-amber {
   background-color: #F59E0B;
 }
-.border-teal {
+.border-amber {
   border-color: #F59E0B;
 }
 .text-gold {
@@ -242,13 +242,13 @@
 }
 
 /* Glow effects */
-.glow-teal {
+.glow-amber {
   box-shadow: 0 0 24px rgba(245, 158, 11, 0.35);
 }
 .glow-gold {
   box-shadow: 0 0 24px rgba(200, 169, 110, 0.3);
 }
-.text-glow-teal {
+.text-glow-amber {
   text-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
 }
 

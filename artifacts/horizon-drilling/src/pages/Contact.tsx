@@ -183,7 +183,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-12 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300 inline-flex items-center gap-2 glow-teal"
+                    className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-12 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300 inline-flex items-center gap-2 glow-amber"
                   >
                     {isSubmitting ? "Sending..." : <>Send Message <ArrowRight size={16} /></>}
                   </button>

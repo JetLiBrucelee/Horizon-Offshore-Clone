@@ -110,7 +110,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.9 }}
-              className="font-condensed font-black text-6xl sm:text-7xl md:text-8xl lg:text-[110px] leading-none tracking-tight uppercase mb-6 text-glow-teal"
+              className="font-condensed font-black text-6xl sm:text-7xl md:text-8xl lg:text-[110px] leading-none tracking-tight uppercase mb-6 text-glow-amber"
             >
               Redefining<br />
               <span className="text-[#F59E0B]">Offshore</span><br />
@@ -133,7 +133,7 @@ export default function Home() {
               className="flex flex-wrap gap-4"
             >
               <Link href="/fleet">
-                <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-8 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 glow-teal flex items-center gap-2">
+                <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-8 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 glow-amber flex items-center gap-2">
                   Explore Our Fleet <ArrowRight size={16} />
                 </button>
               </Link>
@@ -380,7 +380,7 @@ export default function Home() {
               Partner with Horizon Drilling for your next offshore project. Our team of experts is ready to engineer a solution for you.
             </p>
             <Link href="/contact">
-              <button className="font-condensed font-bold text-base tracking-[0.15em] uppercase px-12 py-5 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 glow-teal inline-flex items-center gap-3">
+              <button className="font-condensed font-bold text-base tracking-[0.15em] uppercase px-12 py-5 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 glow-amber inline-flex items-center gap-3">
                 Start a Conversation <ArrowRight size={18} />
               </button>
             </Link>
