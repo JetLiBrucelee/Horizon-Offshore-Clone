@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Horizon Drilling & Co"
+version = "1.0.0"
+id = "artifacts/horizon-drilling"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24954
+
+[services.development]
+run = "pnpm --filter @workspace/horizon-drilling run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/horizon-drilling", "run", "build" ]
+publicDir = "artifacts/horizon-drilling/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24954"
+BASE_PATH = "/"
