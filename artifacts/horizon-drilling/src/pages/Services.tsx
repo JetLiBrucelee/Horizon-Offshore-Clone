@@ -164,7 +164,7 @@ export default function Services() {
                 <ScrollReveal key={service.title} delay={i * 0.05}>
                   <div className={`border transition-all duration-500 ${isOpen ? "border-[#F59E0B]/40 bg-[#0A0E1A]" : "border-white/5 bg-[#0A0E1A] hover:border-white/10"}`}>
                     <button
-                      className="w-full flex items-center justify-between p-4 lg:p-6 text-left"
+                      className="group w-full flex items-center justify-between p-4 lg:p-6 text-left"
                       onClick={() => setExpanded(isOpen ? null : i)}
                     >
                       <div className="flex items-center gap-5 min-w-0">
