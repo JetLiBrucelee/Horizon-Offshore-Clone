@@ -35,7 +35,7 @@ router.post("/contact", async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: "Horizon Drilling Contact Form <onboarding@resend.dev>",
+      from: "Horizon Drilling Contact Form <noreply@horizondrillingsco.com>",
       to: ["support@horizondrillingsco.com"],
       replyTo: safeEmail,
       subject: safeSubject ? `[Contact Form] ${safeSubject}` : `[Contact Form] New Inquiry from ${safeName}`,
