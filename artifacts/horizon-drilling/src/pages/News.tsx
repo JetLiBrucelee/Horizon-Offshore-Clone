@@ -63,9 +63,9 @@ export default function News() {
   const [filter, setFilter] = useState("All");
   const [videoPlaying, setVideoPlaying] = useState(false);
 
-  const filtered = filter === "All" ? articles : articles.filter((a) => a.category === filter);
   const featured = articles[0];
-  const rest = filtered.slice(filtered === articles ? 1 : 0);
+  const filtered = (filter === "All" ? articles : articles.filter((a) => a.category === filter))
+    .filter((a) => a !== featured);
 
   return (
     <main className="bg-[#0A0E1A] text-white">
