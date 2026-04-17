@@ -5,6 +5,10 @@ if (!process.env["RESEND_API_KEY"]) {
   logger.warn("RESEND_API_KEY is not set — contact form emails will not be delivered");
 }
 
+if (!process.env["CONTACT_RECIPIENT_EMAIL"]) {
+  logger.warn("CONTACT_RECIPIENT_EMAIL is not set — contact form emails will not be delivered");
+}
+
 const rawPort = process.env["PORT"];
 
 if (!rawPort) {

@@ -14,10 +14,12 @@ function escapeHtml(str: string): string {
 }
 
 router.post("/contact", async (req, res) => {
-  if (!process.env.RESEND_API_KEY) {
+  if (!process.env.RESEND_API_KEY || !process.env.CONTACT_RECIPIENT_EMAIL) {
     res.status(503).json({ error: "Email service is not configured. Please contact us directly at support@horizondrillingsco.com" });
     return;
   }
+
+  const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL;
 
   const { name, company, email, phone, subject, message } = req.body;
 
@@ -36,7 +38,7 @@ router.post("/contact", async (req, res) => {
   try {
     await resend.emails.send({
       from: "Horizon Drilling Contact Form <noreply@horizondrillingsco.com>",
-      to: ["support@horizondrillingsco.com"],
+      to: [recipientEmail],
       replyTo: safeEmail,
       subject: safeSubject ? `[Contact Form] ${safeSubject}` : `[Contact Form] New Inquiry from ${safeName}`,
       html: `
