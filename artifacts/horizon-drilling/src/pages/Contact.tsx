@@ -211,22 +211,18 @@ export default function Contact() {
             <h2 className="font-condensed font-black text-3xl uppercase tracking-tight mb-8">Houston Headquarters</h2>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <div className="relative border border-white/5 overflow-hidden" style={{ height: "400px" }}>
-              <div className="absolute inset-0 bg-[#0D1629] flex items-center justify-center">
-                <div className="text-center">
-                  {/* Stylized map placeholder */}
-                  <div className="w-full h-full absolute inset-0 opacity-20" style={{
-                    backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(0,180,216,0.3) 30px, rgba(0,180,216,0.3) 31px), repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(0,180,216,0.3) 30px, rgba(0,180,216,0.3) 31px)"
-                  }} />
-                  <div className="relative z-10">
-                    <div className="w-6 h-6 bg-[#00B4D8] rounded-full mx-auto mb-3 relative">
-                      <div className="absolute inset-0 bg-[#00B4D8] rounded-full animate-ping opacity-60" />
-                    </div>
-                    <div className="font-condensed font-bold text-xl uppercase tracking-wide mb-1">Houston, TX</div>
-                    <div className="font-mono-custom text-white/40 text-xs">1500 Louisiana St, Suite 3100</div>
-                    <div className="font-mono-custom text-[#00B4D8] text-xs mt-1">29.7604° N, 95.3698° W</div>
-                  </div>
-                </div>
+            <div className="relative border border-white/5 overflow-hidden" style={{ height: "420px" }}>
+              <iframe
+                title="Horizon Drilling Houston HQ"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-95.3898%2C29.7504%2C-95.3498%2C29.7704&layer=mapnik&marker=29.7604%2C-95.3698"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85)", display: "block" }}
+                loading="lazy"
+                allowFullScreen
+              />
+              <div className="absolute bottom-4 right-4 bg-[#0A0E1A]/90 border border-[#00B4D8]/30 px-4 py-2 text-xs font-mono-custom text-[#00B4D8] pointer-events-none">
+                29.7604° N, 95.3698° W
               </div>
             </div>
           </ScrollReveal>
