@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Clock, ChevronDown, Shield, Globe, Award, Heart, Users, ArrowRight } from "lucide-react";
+import { MapPin, Clock, ChevronDown, Shield, Globe, Award, Heart, Users, ArrowRight, CheckCircle, AlertCircle } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "wouter";
 import { useForm } from "react-hook-form";
@@ -49,13 +49,41 @@ const jobGroups = [
   },
 ];
 
+type FormValues = {
+  name: string;
+  email: string;
+  expertise: string;
+  cvUrl: string;
+  message: string;
+};
+
 export default function Careers() {
   const [openGroup, setOpenGroup] = useState<number | null>(0);
-  const { register, handleSubmit, reset, formState: { isSubmitSuccessful } } = useForm();
+  const [submitState, setSubmitState] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const onSubmit = (data: unknown) => {
-    console.log("Application submitted", data);
-    reset();
+  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
+
+  const onSubmit = async (data: FormValues) => {
+    setSubmitState("loading");
+    setErrorMessage("");
+    try {
+      const res = await fetch("/api/applications", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        setErrorMessage((body as { error?: string }).error ?? "Something went wrong. Please try again.");
+        setSubmitState("error");
+        return;
+      }
+      setSubmitState("success");
+    } catch {
+      setErrorMessage("Unable to reach the server. Please check your connection and try again.");
+      setSubmitState("error");
+    }
   };
 
   return (
@@ -165,7 +193,7 @@ export default function Careers() {
                         className="overflow-hidden"
                       >
                         <div className="border-t border-white/5">
-                          {group.jobs.map((job, ji) => (
+                          {group.jobs.map((job) => (
                             <div
                               key={job.title}
                               className="px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-white/5 hover:bg-white/2 transition-colors duration-200 last:border-b-0"
@@ -189,9 +217,12 @@ export default function Careers() {
                                   )}
                                 </div>
                               </div>
-                              <button className="font-condensed font-bold text-xs tracking-[0.2em] uppercase px-6 py-2.5 border border-[#F59E0B] text-[#F59E0B] hover:bg-[#F59E0B] hover:text-white transition-all duration-300 flex-shrink-0">
+                              <a
+                                href="#apply"
+                                className="font-condensed font-bold text-xs tracking-[0.2em] uppercase px-6 py-2.5 border border-[#F59E0B] text-[#F59E0B] hover:bg-[#F59E0B] hover:text-white transition-all duration-300 flex-shrink-0 text-center"
+                              >
                                 Apply Now
-                              </button>
+                              </a>
                             </div>
                           ))}
                         </div>
@@ -206,7 +237,7 @@ export default function Careers() {
       </section>
 
       {/* Application Form */}
-      <section className="section-padding bg-[#0A0E1A]">
+      <section id="apply" className="section-padding bg-[#0A0E1A]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="max-w-2xl">
             <ScrollReveal>
@@ -215,26 +246,44 @@ export default function Careers() {
               <p className="text-white/50 mb-10">Don't see a matching role? Send us your CV — we're always looking for exceptional talent.</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              {isSubmitSuccessful ? (
+              {submitState === "success" ? (
                 <div className="p-8 border border-[#F59E0B]/30 bg-[#F59E0B]/5 text-center">
-                  <div className="font-condensed font-bold text-2xl text-[#F59E0B] mb-2">Thank You!</div>
+                  <CheckCircle size={36} className="text-[#F59E0B] mx-auto mb-4" />
+                  <div className="font-condensed font-bold text-2xl text-[#F59E0B] mb-2">Application Received</div>
                   <p className="text-white/60">We'll review your details and be in touch within 5 business days.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Full Name</label>
-                      <input {...register("name", { required: true })} className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200" placeholder="James Calloway" />
+                      <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Full Name *</label>
+                      <input
+                        {...register("name", { required: "Full name is required." })}
+                        className={`w-full bg-[#0D1629] border px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200 ${errors.name ? "border-red-500" : "border-white/10"}`}
+                        placeholder="James Calloway"
+                      />
+                      {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name.message}</p>}
                     </div>
                     <div>
-                      <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Email Address</label>
-                      <input {...register("email", { required: true })} type="email" className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200" placeholder="james@example.com" />
+                      <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Email Address *</label>
+                      <input
+                        {...register("email", {
+                          required: "Email address is required.",
+                          pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Enter a valid email address." },
+                        })}
+                        type="email"
+                        className={`w-full bg-[#0D1629] border px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200 ${errors.email ? "border-red-500" : "border-white/10"}`}
+                        placeholder="james@example.com"
+                      />
+                      {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email.message}</p>}
                     </div>
                   </div>
                   <div>
                     <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Area of Expertise</label>
-                    <select {...register("expertise")} className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200">
+                    <select
+                      {...register("expertise")}
+                      className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200"
+                    >
                       <option value="">Select category</option>
                       <option value="offshore">Offshore Operations</option>
                       <option value="engineering">Engineering</option>
@@ -243,11 +292,41 @@ export default function Careers() {
                     </select>
                   </div>
                   <div>
-                    <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Message</label>
-                    <textarea {...register("message")} rows={4} className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200 resize-none" placeholder="Tell us about your experience and what you're looking for..." />
+                    <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">CV / LinkedIn / Portfolio URL</label>
+                    <input
+                      {...register("cvUrl", {
+                        validate: (val) =>
+                          !val || /^https?:\/\/.+/.test(val) || "Please enter a valid URL (starting with http:// or https://).",
+                      })}
+                      type="url"
+                      className={`w-full bg-[#0D1629] border px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200 ${errors.cvUrl ? "border-red-500" : "border-white/10"}`}
+                      placeholder="https://linkedin.com/in/your-profile"
+                    />
+                    {errors.cvUrl && <p className="mt-1 text-xs text-red-400">{errors.cvUrl.message}</p>}
                   </div>
-                  <button type="submit" className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 inline-flex items-center gap-2">
-                    Submit Application <ArrowRight size={16} />
+                  <div>
+                    <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Message</label>
+                    <textarea
+                      {...register("message")}
+                      rows={4}
+                      className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200 resize-none"
+                      placeholder="Tell us about your experience and what you're looking for..."
+                    />
+                  </div>
+
+                  {submitState === "error" && (
+                    <div className="flex items-start gap-3 p-4 border border-red-500/30 bg-red-500/5">
+                      <AlertCircle size={16} className="text-red-400 flex-shrink-0 mt-0.5" />
+                      <p className="text-red-400 text-sm">{errorMessage}</p>
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={submitState === "loading"}
+                    className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 inline-flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {submitState === "loading" ? "Submitting…" : <>Submit Application <ArrowRight size={16} /></>}
                   </button>
                 </form>
               )}
