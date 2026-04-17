@@ -196,15 +196,15 @@
   font-family: 'Roboto Mono', monospace;
 }
 
-/* Teal accent color */
+/* Amber accent color */
 .text-teal {
-  color: #00B4D8;
+  color: #F59E0B;
 }
 .bg-teal {
-  background-color: #00B4D8;
+  background-color: #F59E0B;
 }
 .border-teal {
-  border-color: #00B4D8;
+  border-color: #F59E0B;
 }
 .text-gold {
   color: #C8A96E;
@@ -243,24 +243,24 @@
 
 /* Glow effects */
 .glow-teal {
-  box-shadow: 0 0 24px rgba(0, 180, 216, 0.3);
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.35);
 }
 .glow-gold {
   box-shadow: 0 0 24px rgba(200, 169, 110, 0.3);
 }
 .text-glow-teal {
-  text-shadow: 0 0 30px rgba(0, 180, 216, 0.5);
+  text-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
 }
 
 /* Accent line */
 .accent-line {
   width: 60px;
   height: 3px;
-  background: linear-gradient(to right, #00B4D8, #C8A96E);
+  background: linear-gradient(to right, #F59E0B, #C8A96E);
 }
 .accent-line-full {
   height: 1px;
-  background: linear-gradient(to right, transparent, #00B4D8, #C8A96E, transparent);
+  background: linear-gradient(to right, transparent, #F59E0B, #C8A96E, transparent);
 }
 
 /* Section padding */
@@ -285,5 +285,5 @@
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00B4D8;
+  background: #F59E0B;
 }

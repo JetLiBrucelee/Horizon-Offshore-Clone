@@ -35,7 +35,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#060810] overflow-hidden">
       {/* Top accent line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[#00B4D8] to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-[#F59E0B] to-transparent" />
       <div className="h-px bg-gradient-to-r from-transparent via-[#C8A96E]/40 to-transparent mt-0.5" />
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20">
@@ -44,14 +44,14 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
               <div className="relative">
-                <div className="w-10 h-10 border-2 border-[#00B4D8] rotate-45" />
+                <div className="w-10 h-10 border-2 border-[#F59E0B] rotate-45" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-condensed font-black text-sm text-[#00B4D8] tracking-widest">HD</span>
+                  <span className="font-condensed font-black text-sm text-[#F59E0B] tracking-widest">HD</span>
                 </div>
               </div>
               <div>
                 <p className="font-condensed font-black text-base tracking-[0.12em] text-white uppercase leading-none">Horizon Drilling</p>
-                <p className="font-mono-custom text-[9px] text-[#00B4D8] tracking-[0.3em] mt-0.5">& CO</p>
+                <p className="font-mono-custom text-[9px] text-[#F59E0B] tracking-[0.3em] mt-0.5">& CO</p>
               </div>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
@@ -63,7 +63,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/40 hover:border-[#00B4D8] hover:text-[#00B4D8] transition-all duration-300"
+                  className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/40 hover:border-[#F59E0B] hover:text-[#F59E0B] transition-all duration-300"
                 >
                   <Icon size={15} />
                 </a>
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-condensed font-bold text-sm tracking-[0.2em] uppercase text-[#00B4D8] mb-6">Company</h4>
+            <h4 className="font-condensed font-bold text-sm tracking-[0.2em] uppercase text-[#F59E0B] mb-6">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
@@ -90,7 +90,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-condensed font-bold text-sm tracking-[0.2em] uppercase text-[#00B4D8] mb-6">Services</h4>
+            <h4 className="font-condensed font-bold text-sm tracking-[0.2em] uppercase text-[#F59E0B] mb-6">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
@@ -107,19 +107,19 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-condensed font-bold text-sm tracking-[0.2em] uppercase text-[#00B4D8] mb-6">Contact</h4>
+            <h4 className="font-condensed font-bold text-sm tracking-[0.2em] uppercase text-[#F59E0B] mb-6">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/50 text-sm">
-                <MapPin size={15} className="text-[#00B4D8] mt-0.5 flex-shrink-0" />
+                <MapPin size={15} className="text-[#F59E0B] mt-0.5 flex-shrink-0" />
                 <span>1500 Louisiana St, Suite 3100<br />Houston, TX 77002, USA</span>
               </li>
               <li className="flex items-center gap-3 text-white/50 text-sm">
-                <Phone size={15} className="text-[#00B4D8] flex-shrink-0" />
+                <Phone size={15} className="text-[#F59E0B] flex-shrink-0" />
                 <span>+1 (713) 555-0192</span>
               </li>
               <li className="flex items-center gap-3 text-white/50 text-sm">
-                <Mail size={15} className="text-[#00B4D8] flex-shrink-0" />
-                <span>info@horizondrilling.com</span>
+                <Mail size={15} className="text-[#F59E0B] flex-shrink-0" />
+                <span>support@horizondrillingsco.com</span>
               </li>
             </ul>
           </div>

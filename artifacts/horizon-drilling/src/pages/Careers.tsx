@@ -17,7 +17,7 @@ const jobGroups = [
     category: "Offshore Operations",
     jobs: [
       { title: "Toolpusher — Ultra-Deepwater", location: "Gulf of Mexico", type: "Permanent", rotation: "28/28" },
-      { title: "Senior Driller", location: "West Africa", type: "Permanent", rotation: "28/28" },
+      { title: "Senior Driller", location: "North Sea", type: "Permanent", rotation: "28/28" },
       { title: "Subsea Engineer", location: "Norwegian Sea", type: "Contract", rotation: "N/A" },
       { title: "FPSO Operations Supervisor", location: "Pre-Salt Brazil", type: "Permanent", rotation: "28/28" },
     ],
@@ -42,7 +42,7 @@ const jobGroups = [
   {
     category: "Corporate",
     jobs: [
-      { title: "Commercial Manager — West Africa", location: "Lagos / Houston", type: "Permanent", rotation: "N/A" },
+      { title: "Commercial Manager — North Sea", location: "London / Houston", type: "Permanent", rotation: "N/A" },
       { title: "HSE Manager", location: "Houston, TX", type: "Permanent", rotation: "N/A" },
       { title: "HR Business Partner", location: "Rotterdam, NL", type: "Permanent", rotation: "N/A" },
     ],
@@ -69,7 +69,7 @@ export default function Careers() {
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">
               <div className="accent-line" />
-              <span className="font-mono-custom text-[#00B4D8] text-xs tracking-[0.3em] uppercase">Join Our Crew</span>
+              <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">Join Our Crew</span>
             </div>
             <h1 className="font-condensed font-black text-6xl lg:text-8xl uppercase tracking-tight mb-6">
               Build Your<br /><span className="text-[#C8A96E]">Career</span><br />Offshore
@@ -134,24 +134,24 @@ export default function Careers() {
           <div className="space-y-2">
             {jobGroups.map((group, gi) => (
               <ScrollReveal key={group.category} delay={gi * 0.05}>
-                <div className={`border transition-all duration-500 ${openGroup === gi ? "border-[#00B4D8]/30 bg-[#0A0E1A]" : "border-white/5 bg-[#0A0E1A]"}`}>
+                <div className={`border transition-all duration-500 ${openGroup === gi ? "border-[#F59E0B]/30 bg-[#0A0E1A]" : "border-white/5 bg-[#0A0E1A]"}`}>
                   <button
                     className="w-full flex items-center justify-between px-6 py-5 text-left"
                     onClick={() => setOpenGroup(openGroup === gi ? null : gi)}
                   >
                     <div className="flex items-center gap-4">
-                      <div className="flex items-center justify-center w-8 h-8 bg-[#00B4D8]/10 border border-[#00B4D8]/20">
-                        <Users size={14} className="text-[#00B4D8]" />
+                      <div className="flex items-center justify-center w-8 h-8 bg-[#F59E0B]/10 border border-[#F59E0B]/20">
+                        <Users size={14} className="text-[#F59E0B]" />
                       </div>
                       <div>
-                        <span className={`font-condensed font-bold text-xl uppercase tracking-wide ${openGroup === gi ? "text-[#00B4D8]" : "text-white"}`}>
+                        <span className={`font-condensed font-bold text-xl uppercase tracking-wide ${openGroup === gi ? "text-[#F59E0B]" : "text-white"}`}>
                           {group.category}
                         </span>
                         <span className="ml-3 font-mono-custom text-white/30 text-xs">{group.jobs.length} open</span>
                       </div>
                     </div>
                     <motion.div animate={{ rotate: openGroup === gi ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                      <ChevronDown size={18} className={openGroup === gi ? "text-[#00B4D8]" : "text-white/30"} />
+                      <ChevronDown size={18} className={openGroup === gi ? "text-[#F59E0B]" : "text-white/30"} />
                     </motion.div>
                   </button>
 
@@ -174,22 +174,22 @@ export default function Careers() {
                                 <div className="font-condensed font-bold text-lg uppercase tracking-wide mb-1">{job.title}</div>
                                 <div className="flex flex-wrap gap-4 text-xs text-white/40">
                                   <div className="flex items-center gap-1.5">
-                                    <MapPin size={11} className="text-[#00B4D8]" />
+                                    <MapPin size={11} className="text-[#F59E0B]" />
                                     <span>{job.location}</span>
                                   </div>
                                   <div className="flex items-center gap-1.5">
-                                    <Clock size={11} className="text-[#00B4D8]" />
+                                    <Clock size={11} className="text-[#F59E0B]" />
                                     <span>{job.type}</span>
                                   </div>
                                   {job.rotation !== "N/A" && (
                                     <div className="flex items-center gap-1.5">
-                                      <span className="text-[#00B4D8]">Rotation:</span>
+                                      <span className="text-[#F59E0B]">Rotation:</span>
                                       <span>{job.rotation}</span>
                                     </div>
                                   )}
                                 </div>
                               </div>
-                              <button className="font-condensed font-bold text-xs tracking-[0.2em] uppercase px-6 py-2.5 border border-[#00B4D8] text-[#00B4D8] hover:bg-[#00B4D8] hover:text-white transition-all duration-300 flex-shrink-0">
+                              <button className="font-condensed font-bold text-xs tracking-[0.2em] uppercase px-6 py-2.5 border border-[#F59E0B] text-[#F59E0B] hover:bg-[#F59E0B] hover:text-white transition-all duration-300 flex-shrink-0">
                                 Apply Now
                               </button>
                             </div>
@@ -216,8 +216,8 @@ export default function Careers() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               {isSubmitSuccessful ? (
-                <div className="p-8 border border-[#00B4D8]/30 bg-[#00B4D8]/5 text-center">
-                  <div className="font-condensed font-bold text-2xl text-[#00B4D8] mb-2">Thank You!</div>
+                <div className="p-8 border border-[#F59E0B]/30 bg-[#F59E0B]/5 text-center">
+                  <div className="font-condensed font-bold text-2xl text-[#F59E0B] mb-2">Thank You!</div>
                   <p className="text-white/60">We'll review your details and be in touch within 5 business days.</p>
                 </div>
               ) : (
@@ -225,16 +225,16 @@ export default function Careers() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Full Name</label>
-                      <input {...register("name", { required: true })} className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#00B4D8] focus:outline-none transition-colors duration-200" placeholder="James Calloway" />
+                      <input {...register("name", { required: true })} className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200" placeholder="James Calloway" />
                     </div>
                     <div>
                       <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Email Address</label>
-                      <input {...register("email", { required: true })} type="email" className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#00B4D8] focus:outline-none transition-colors duration-200" placeholder="james@example.com" />
+                      <input {...register("email", { required: true })} type="email" className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200" placeholder="james@example.com" />
                     </div>
                   </div>
                   <div>
                     <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Area of Expertise</label>
-                    <select {...register("expertise")} className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#00B4D8] focus:outline-none transition-colors duration-200">
+                    <select {...register("expertise")} className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200">
                       <option value="">Select category</option>
                       <option value="offshore">Offshore Operations</option>
                       <option value="engineering">Engineering</option>
@@ -244,9 +244,9 @@ export default function Careers() {
                   </div>
                   <div>
                     <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Message</label>
-                    <textarea {...register("message")} rows={4} className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#00B4D8] focus:outline-none transition-colors duration-200 resize-none" placeholder="Tell us about your experience and what you're looking for..." />
+                    <textarea {...register("message")} rows={4} className="w-full bg-[#0D1629] border border-white/10 px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200 resize-none" placeholder="Tell us about your experience and what you're looking for..." />
                   </div>
-                  <button type="submit" className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 bg-[#00B4D8] text-white hover:bg-[#0096C7] transition-all duration-300 inline-flex items-center gap-2">
+                  <button type="submit" className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 inline-flex items-center gap-2">
                     Submit Application <ArrowRight size={16} />
                   </button>
                 </form>

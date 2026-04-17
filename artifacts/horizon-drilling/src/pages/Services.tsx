@@ -129,16 +129,16 @@ export default function Services() {
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0" style={{
-          backgroundImage: "radial-gradient(ellipse at 70% 50%, rgba(0,180,216,0.08) 0%, transparent 70%)"
+          backgroundImage: "radial-gradient(ellipse at 70% 50%, rgba(245,158,11,0.08) 0%, transparent 70%)"
         }} />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative z-10">
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">
               <div className="accent-line" />
-              <span className="font-mono-custom text-[#00B4D8] text-xs tracking-[0.3em] uppercase">Our Services</span>
+              <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">Our Services</span>
             </div>
             <h1 className="font-condensed font-black text-6xl lg:text-8xl uppercase tracking-tight mb-6">
-              Full-Spectrum<br /><span className="text-[#00B4D8]">Offshore</span><br />Capability
+              Full-Spectrum<br /><span className="text-[#F59E0B]">Offshore</span><br />Capability
             </h1>
             <p className="text-white/60 text-xl max-w-2xl leading-relaxed">
               From ultra-deepwater drilling to digital operations management — Horizon Drilling delivers integrated solutions across the complete offshore value chain.
@@ -156,24 +156,24 @@ export default function Services() {
               const isOpen = expanded === i;
               return (
                 <ScrollReveal key={service.title} delay={i * 0.05}>
-                  <div className={`border transition-all duration-500 ${isOpen ? "border-[#00B4D8]/40 bg-[#0A0E1A]" : "border-white/5 bg-[#0A0E1A] hover:border-white/10"}`}>
+                  <div className={`border transition-all duration-500 ${isOpen ? "border-[#F59E0B]/40 bg-[#0A0E1A]" : "border-white/5 bg-[#0A0E1A] hover:border-white/10"}`}>
                     <button
                       className="w-full flex items-center justify-between p-6 lg:p-8 text-left"
                       onClick={() => setExpanded(isOpen ? null : i)}
                     >
                       <div className="flex items-center gap-6">
-                        <div className={`w-12 h-12 flex items-center justify-center border transition-colors duration-300 ${isOpen ? "border-[#00B4D8] bg-[#00B4D8]/10" : "border-white/10"}`}>
-                          <Icon size={20} className={isOpen ? "text-[#00B4D8]" : "text-white/50"} />
+                        <div className={`w-12 h-12 flex items-center justify-center border transition-colors duration-300 ${isOpen ? "border-[#F59E0B] bg-[#F59E0B]/10" : "border-white/10"}`}>
+                          <Icon size={20} className={isOpen ? "text-[#F59E0B]" : "text-white/50"} />
                         </div>
                         <div>
-                          <h3 className={`font-condensed font-bold text-2xl uppercase tracking-wide transition-colors duration-300 ${isOpen ? "text-[#00B4D8]" : "text-white"}`}>
+                          <h3 className={`font-condensed font-bold text-2xl uppercase tracking-wide transition-colors duration-300 ${isOpen ? "text-[#F59E0B]" : "text-white"}`}>
                             {service.title}
                           </h3>
                           <p className="text-white/40 text-sm mt-1">{service.tagline}</p>
                         </div>
                       </div>
                       <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                        <ChevronDown size={20} className={isOpen ? "text-[#00B4D8]" : "text-white/30"} />
+                        <ChevronDown size={20} className={isOpen ? "text-[#F59E0B]" : "text-white/30"} />
                       </motion.div>
                     </button>
 
@@ -194,7 +194,7 @@ export default function Services() {
                                 <ul className="space-y-2">
                                   {service.capabilities.map((cap) => (
                                     <li key={cap} className="flex items-start gap-3 text-sm text-white/60">
-                                      <span className="text-[#00B4D8] mt-0.5 flex-shrink-0">—</span>
+                                      <span className="text-[#F59E0B] mt-0.5 flex-shrink-0">—</span>
                                       <span>{cap}</span>
                                     </li>
                                   ))}
@@ -206,7 +206,7 @@ export default function Services() {
                                   {service.specs.map((spec) => (
                                     <div key={spec.label} className="flex justify-between items-center py-2 border-b border-white/5">
                                       <span className="text-white/40 text-xs tracking-wide">{spec.label}</span>
-                                      <span className="font-mono-custom text-[#00B4D8] text-sm font-medium">{spec.value}</span>
+                                      <span className="font-mono-custom text-[#F59E0B] text-sm font-medium">{spec.value}</span>
                                     </div>
                                   ))}
                                 </div>
@@ -231,7 +231,7 @@ export default function Services() {
             <h2 className="font-condensed font-black text-4xl lg:text-6xl uppercase mb-6">Discuss Your Project</h2>
             <p className="text-white/50 max-w-lg mx-auto mb-8">Our team is ready to engineer a solution tailored to your offshore challenges.</p>
             <Link href="/contact">
-              <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 bg-[#00B4D8] text-white hover:bg-[#0096C7] transition-all duration-300 inline-flex items-center gap-2">
+              <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 inline-flex items-center gap-2">
                 Get in Touch <ArrowRight size={16} />
               </button>
             </Link>

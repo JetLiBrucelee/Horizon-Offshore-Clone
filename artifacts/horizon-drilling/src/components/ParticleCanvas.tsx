@@ -20,7 +20,7 @@ export default function ParticleCanvas() {
       size: number; opacity: number; color: string;
     }> = [];
 
-    const colors = ["#00B4D8", "#0096C7", "#C8A96E", "#ffffff"];
+    const colors = ["#F59E0B", "#D97706", "#C8A96E", "#ffffff"];
     const count = Math.floor((width * height) / 14000);
 
     for (let i = 0; i < count; i++) {
@@ -64,7 +64,7 @@ export default function ParticleCanvas() {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(q.x, q.y);
-            ctx.strokeStyle = "#00B4D8";
+            ctx.strokeStyle = "#F59E0B";
             ctx.globalAlpha = (1 - dist / 80) * 0.08;
             ctx.lineWidth = 0.5;
             ctx.stroke();

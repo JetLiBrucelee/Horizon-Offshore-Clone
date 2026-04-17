@@ -72,16 +72,16 @@ export default function News() {
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0" style={{
-          backgroundImage: "radial-gradient(ellipse at 60% 40%, rgba(0,180,216,0.07) 0%, transparent 60%)"
+          backgroundImage: "radial-gradient(ellipse at 60% 40%, rgba(245,158,11,0.07) 0%, transparent 60%)"
         }} />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative z-10">
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">
               <div className="accent-line" />
-              <span className="font-mono-custom text-[#00B4D8] text-xs tracking-[0.3em] uppercase">News & Media</span>
+              <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">News & Media</span>
             </div>
             <h1 className="font-condensed font-black text-6xl lg:text-8xl uppercase tracking-tight mb-6">
-              Latest<br /><span className="text-[#00B4D8]">News</span>
+              Latest<br /><span className="text-[#F59E0B]">News</span>
             </h1>
             <p className="text-white/60 text-xl max-w-2xl leading-relaxed">
               Stay informed on Horizon Drilling's latest operations, technology breakthroughs, sustainability initiatives, and industry recognition.
@@ -97,7 +97,7 @@ export default function News() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="font-condensed font-bold text-xs tracking-[0.2em] uppercase px-3 py-1 bg-[#00B4D8]/20 text-[#00B4D8] border border-[#00B4D8]/30">
+                  <span className="font-condensed font-bold text-xs tracking-[0.2em] uppercase px-3 py-1 bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/30">
                     Featured
                   </span>
                   <span className="font-condensed font-bold text-xs tracking-wider px-3 py-1 bg-white/5 text-white/50 border border-white/10">
@@ -111,14 +111,14 @@ export default function News() {
                 <div className="flex items-center gap-4 text-white/30 text-xs font-mono-custom mb-6">
                   <div className="flex items-center gap-1.5"><Calendar size={11} /><span>{featured.date}</span></div>
                 </div>
-                <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-8 py-3 border border-[#00B4D8] text-[#00B4D8] hover:bg-[#00B4D8] hover:text-white transition-all duration-300 inline-flex items-center gap-2">
+                <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-8 py-3 border border-[#F59E0B] text-[#F59E0B] hover:bg-[#F59E0B] hover:text-white transition-all duration-300 inline-flex items-center gap-2">
                   Read Full Article <ArrowRight size={14} />
                 </button>
               </div>
               <div className="h-64 lg:h-80 bg-gradient-to-br from-[#1E2D4A] to-[#0A0E1A] flex items-center justify-center border border-white/5">
                 <div className="text-center">
-                  <div className="font-condensed font-black text-6xl text-[#00B4D8]/20 mb-2">500</div>
-                  <div className="font-condensed font-bold text-xl text-[#00B4D8]/40 uppercase tracking-widest">Days</div>
+                  <div className="font-condensed font-black text-6xl text-[#F59E0B]/20 mb-2">500</div>
+                  <div className="font-condensed font-bold text-xl text-[#F59E0B]/40 uppercase tracking-widest">Days</div>
                 </div>
               </div>
             </div>
@@ -150,8 +150,8 @@ export default function News() {
                   />
                   <div className="absolute inset-0 bg-[#0A0E1A]/60" />
                   <div className="relative z-10 flex flex-col items-center gap-4">
-                    <div className="w-20 h-20 bg-[#00B4D8]/20 border-2 border-[#00B4D8] rounded-full flex items-center justify-center group-hover:bg-[#00B4D8]/40 transition-colors duration-300">
-                      <Play size={32} className="text-[#00B4D8] ml-1" />
+                    <div className="w-20 h-20 bg-[#F59E0B]/20 border-2 border-[#F59E0B] rounded-full flex items-center justify-center group-hover:bg-[#F59E0B]/40 transition-colors duration-300">
+                      <Play size={32} className="text-[#F59E0B] ml-1" />
                     </div>
                     <span className="font-condensed font-bold text-lg uppercase tracking-wider text-white">Play Video</span>
                   </div>
@@ -178,19 +178,19 @@ export default function News() {
               <div className="space-y-3">
                 <div className="flex justify-between py-2 border-b border-white/5">
                   <span className="text-white/40 text-xs">Event</span>
-                  <span className="font-mono-custom text-[#00B4D8] text-xs">SEOGS 2025</span>
+                  <span className="font-mono-custom text-[#F59E0B] text-xs">SEOGS 2025</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/5">
                   <span className="text-white/40 text-xs">Location</span>
-                  <span className="font-mono-custom text-[#00B4D8] text-xs">Singapore</span>
+                  <span className="font-mono-custom text-[#F59E0B] text-xs">Singapore</span>
                 </div>
                 <div className="flex justify-between py-2 border-b border-white/5">
                   <span className="text-white/40 text-xs">Date</span>
-                  <span className="font-mono-custom text-[#00B4D8] text-xs">Jan 20–22, 2025</span>
+                  <span className="font-mono-custom text-[#F59E0B] text-xs">Jan 20–22, 2025</span>
                 </div>
                 <div className="flex justify-between py-2">
                   <span className="text-white/40 text-xs">Visitors</span>
-                  <span className="font-mono-custom text-[#00B4D8] text-xs">4,200+</span>
+                  <span className="font-mono-custom text-[#F59E0B] text-xs">4,200+</span>
                 </div>
               </div>
             </div>
@@ -209,8 +209,8 @@ export default function News() {
                   onClick={() => setFilter(cat)}
                   className={`font-condensed font-bold text-xs tracking-[0.15em] uppercase px-5 py-2 border transition-all duration-300 ${
                     filter === cat
-                      ? "bg-[#00B4D8] border-[#00B4D8] text-white"
-                      : "border-white/10 text-white/50 hover:border-[#00B4D8]/50 hover:text-white"
+                      ? "bg-[#F59E0B] border-[#F59E0B] text-white"
+                      : "border-white/10 text-white/50 hover:border-[#F59E0B]/50 hover:text-white"
                   }`}
                 >
                   {cat}
@@ -222,14 +222,14 @@ export default function News() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.slice(0, filter === "All" ? undefined : undefined).map((article, i) => (
               <ScrollReveal key={article.title} delay={i * 0.05}>
-                <div className="group p-6 bg-[#0D1629] border border-white/5 hover:border-[#00B4D8]/30 transition-all duration-500 cursor-pointer h-full flex flex-col">
+                <div className="group p-6 bg-[#0D1629] border border-white/5 hover:border-[#F59E0B]/30 transition-all duration-500 cursor-pointer h-full flex flex-col">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="font-condensed font-bold text-xs tracking-wider px-2.5 py-1 bg-[#00B4D8]/10 text-[#00B4D8] border border-[#00B4D8]/20">
+                    <span className="font-condensed font-bold text-xs tracking-wider px-2.5 py-1 bg-[#F59E0B]/10 text-[#F59E0B] border border-[#F59E0B]/20">
                       {article.category}
                     </span>
                     <span className="font-mono-custom text-white/30 text-xs">{article.date}</span>
                   </div>
-                  <h3 className="font-condensed font-bold text-xl uppercase tracking-wide mb-3 group-hover:text-[#00B4D8] transition-colors leading-tight flex-1">
+                  <h3 className="font-condensed font-bold text-xl uppercase tracking-wide mb-3 group-hover:text-[#F59E0B] transition-colors leading-tight flex-1">
                     {article.title}
                   </h3>
                   <p className="text-white/40 text-sm leading-relaxed mb-4">{article.excerpt}</p>

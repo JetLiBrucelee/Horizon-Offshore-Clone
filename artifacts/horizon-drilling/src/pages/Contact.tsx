@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, ArrowRight, Globe } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -9,7 +10,7 @@ const offices = [
     country: "USA — Headquarters",
     address: "1500 Louisiana St, Suite 3100\nHouston, TX 77002",
     phone: "+1 (713) 555-0192",
-    email: "houston@horizondrilling.com",
+    email: "support@horizondrillingsco.com",
     hours: "Mon – Fri: 07:00 – 18:00 CST",
   },
   {
@@ -17,7 +18,7 @@ const offices = [
     country: "Netherlands",
     address: "Boompjes 40, 3011 XB\nRotterdam",
     phone: "+31 10 555 0847",
-    email: "rotterdam@horizondrilling.com",
+    email: "support@horizondrillingsco.com",
     hours: "Mon – Fri: 08:00 – 17:00 CET",
   },
   {
@@ -25,7 +26,7 @@ const offices = [
     country: "Brazil",
     address: "Av. Rio Branco 181, Suite 2200\nCentro, Rio de Janeiro",
     phone: "+55 21 3555 0194",
-    email: "rio@horizondrilling.com",
+    email: "support@horizondrillingsco.com",
     hours: "Mon – Fri: 08:00 – 17:00 BRT",
   },
   {
@@ -33,7 +34,7 @@ const offices = [
     country: "Singapore",
     address: "One Raffles Quay, #28-01\nSingapore 048583",
     phone: "+65 6555 0392",
-    email: "singapore@horizondrilling.com",
+    email: "support@horizondrillingsco.com",
     hours: "Mon – Fri: 08:30 – 17:30 SGT",
   },
 ];
@@ -50,11 +51,32 @@ const subjects = [
 ];
 
 export default function Contact() {
-  const { register, handleSubmit, reset, formState: { isSubmitSuccessful, errors } } = useForm();
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-  const onSubmit = (data: unknown) => {
-    console.log("Form submitted:", data);
-    reset();
+  const onSubmit = async (data: Record<string, string>) => {
+    setSubmitError(null);
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        setSubmitError(body.error || "Failed to send message. Please try again.");
+      } else {
+        setSubmitted(true);
+        reset();
+      }
+    } catch {
+      setSubmitError("Connection error. Please check your network and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -62,16 +84,16 @@ export default function Contact() {
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0" style={{
-          backgroundImage: "radial-gradient(ellipse at 50% 50%, rgba(0,180,216,0.07) 0%, transparent 60%)"
+          backgroundImage: "radial-gradient(ellipse at 50% 50%, rgba(245,158,11,0.07) 0%, transparent 60%)"
         }} />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative z-10">
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">
               <div className="accent-line" />
-              <span className="font-mono-custom text-[#00B4D8] text-xs tracking-[0.3em] uppercase">Get in Touch</span>
+              <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">Get in Touch</span>
             </div>
             <h1 className="font-condensed font-black text-6xl lg:text-8xl uppercase tracking-tight mb-6">
-              Let's Work<br /><span className="text-[#00B4D8]">Together</span>
+              Let's Work<br /><span className="text-[#F59E0B]">Together</span>
             </h1>
             <p className="text-white/60 text-xl max-w-2xl leading-relaxed">
               Whether you have a project to discuss, a technical challenge to solve, or just want to learn more about Horizon Drilling — our team is ready to help.
@@ -90,9 +112,9 @@ export default function Contact() {
               <div className="accent-line mb-6" />
               <h2 className="font-condensed font-black text-4xl uppercase tracking-tight mb-8">Send a Message</h2>
 
-              {isSubmitSuccessful ? (
-                <div className="p-10 border border-[#00B4D8]/30 bg-[#00B4D8]/5 text-center">
-                  <div className="font-condensed font-black text-3xl text-[#00B4D8] mb-3">Message Sent!</div>
+              {submitted ? (
+                <div className="p-10 border border-[#F59E0B]/30 bg-[#F59E0B]/5 text-center">
+                  <div className="font-condensed font-black text-3xl text-[#F59E0B] mb-3">Message Sent!</div>
                   <p className="text-white/60">Our team will respond within one business day. Thank you for reaching out.</p>
                 </div>
               ) : (
@@ -102,7 +124,7 @@ export default function Contact() {
                       <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Full Name *</label>
                       <input
                         {...register("name", { required: "Name is required" })}
-                        className={`w-full bg-[#0A0E1A] border px-4 py-3.5 text-sm text-white focus:outline-none transition-colors duration-200 ${errors.name ? "border-red-500/50" : "border-white/10 focus:border-[#00B4D8]"}`}
+                        className={`w-full bg-[#0A0E1A] border px-4 py-3.5 text-sm text-white focus:outline-none transition-colors duration-200 ${errors.name ? "border-red-500/50" : "border-white/10 focus:border-[#F59E0B]"}`}
                         placeholder="James Calloway"
                       />
                     </div>
@@ -110,7 +132,7 @@ export default function Contact() {
                       <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Company</label>
                       <input
                         {...register("company")}
-                        className="w-full bg-[#0A0E1A] border border-white/10 px-4 py-3.5 text-sm text-white focus:border-[#00B4D8] focus:outline-none transition-colors duration-200"
+                        className="w-full bg-[#0A0E1A] border border-white/10 px-4 py-3.5 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200"
                         placeholder="Your Company Name"
                       />
                     </div>
@@ -121,7 +143,7 @@ export default function Contact() {
                       <input
                         {...register("email", { required: "Email is required" })}
                         type="email"
-                        className={`w-full bg-[#0A0E1A] border px-4 py-3.5 text-sm text-white focus:outline-none transition-colors duration-200 ${errors.email ? "border-red-500/50" : "border-white/10 focus:border-[#00B4D8]"}`}
+                        className={`w-full bg-[#0A0E1A] border px-4 py-3.5 text-sm text-white focus:outline-none transition-colors duration-200 ${errors.email ? "border-red-500/50" : "border-white/10 focus:border-[#F59E0B]"}`}
                         placeholder="james@company.com"
                       />
                     </div>
@@ -129,7 +151,7 @@ export default function Contact() {
                       <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Phone</label>
                       <input
                         {...register("phone")}
-                        className="w-full bg-[#0A0E1A] border border-white/10 px-4 py-3.5 text-sm text-white focus:border-[#00B4D8] focus:outline-none transition-colors duration-200"
+                        className="w-full bg-[#0A0E1A] border border-white/10 px-4 py-3.5 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200"
                         placeholder="+1 (555) 000-0000"
                       />
                     </div>
@@ -138,7 +160,7 @@ export default function Contact() {
                     <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Subject</label>
                     <select
                       {...register("subject")}
-                      className="w-full bg-[#0A0E1A] border border-white/10 px-4 py-3.5 text-sm text-white focus:border-[#00B4D8] focus:outline-none transition-colors duration-200"
+                      className="w-full bg-[#0A0E1A] border border-white/10 px-4 py-3.5 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200"
                     >
                       <option value="">Select a subject</option>
                       {subjects.map((s) => <option key={s} value={s}>{s}</option>)}
@@ -149,15 +171,21 @@ export default function Contact() {
                     <textarea
                       {...register("message", { required: "Message is required" })}
                       rows={6}
-                      className={`w-full bg-[#0A0E1A] border px-4 py-3.5 text-sm text-white focus:outline-none transition-colors duration-200 resize-none ${errors.message ? "border-red-500/50" : "border-white/10 focus:border-[#00B4D8]"}`}
+                      className={`w-full bg-[#0A0E1A] border px-4 py-3.5 text-sm text-white focus:outline-none transition-colors duration-200 resize-none ${errors.message ? "border-red-500/50" : "border-white/10 focus:border-[#F59E0B]"}`}
                       placeholder="Tell us about your project, requirements, or questions..."
                     />
                   </div>
+                  {submitError && (
+                    <div className="p-4 border border-red-500/30 bg-red-500/10 text-red-400 text-sm">
+                      {submitError}
+                    </div>
+                  )}
                   <button
                     type="submit"
-                    className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-12 py-4 bg-[#00B4D8] text-white hover:bg-[#0096C7] transition-all duration-300 inline-flex items-center gap-2 glow-teal"
+                    disabled={isSubmitting}
+                    className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-12 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300 inline-flex items-center gap-2 glow-teal"
                   >
-                    Send Message <ArrowRight size={16} />
+                    {isSubmitting ? "Sending..." : <>Send Message <ArrowRight size={16} /></>}
                   </button>
                 </form>
               )}
@@ -169,29 +197,29 @@ export default function Contact() {
               <h2 className="font-condensed font-black text-4xl uppercase tracking-tight mb-8">Our Offices</h2>
               <div className="space-y-6">
                 {offices.map((office) => (
-                  <div key={office.city} className="group p-6 bg-[#0A0E1A] border border-white/5 hover:border-[#00B4D8]/30 transition-all duration-500">
+                  <div key={office.city} className="group p-6 bg-[#0A0E1A] border border-white/5 hover:border-[#F59E0B]/30 transition-all duration-500">
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <h3 className="font-condensed font-black text-2xl uppercase tracking-wide">{office.city}</h3>
-                        <p className="font-condensed text-sm tracking-wider text-[#00B4D8]">{office.country}</p>
+                        <p className="font-condensed text-sm tracking-wider text-[#F59E0B]">{office.country}</p>
                       </div>
-                      <Globe size={18} className="text-white/10 group-hover:text-[#00B4D8]/30 transition-colors" />
+                      <Globe size={18} className="text-white/10 group-hover:text-[#F59E0B]/30 transition-colors" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-start gap-3 text-sm text-white/50">
-                        <MapPin size={13} className="text-[#00B4D8] mt-0.5 flex-shrink-0" />
+                        <MapPin size={13} className="text-[#F59E0B] mt-0.5 flex-shrink-0" />
                         <span className="whitespace-pre-line">{office.address}</span>
                       </div>
                       <div className="flex items-center gap-3 text-sm text-white/50">
-                        <Phone size={13} className="text-[#00B4D8] flex-shrink-0" />
+                        <Phone size={13} className="text-[#F59E0B] flex-shrink-0" />
                         <span>{office.phone}</span>
                       </div>
                       <div className="flex items-center gap-3 text-sm text-white/50">
-                        <Mail size={13} className="text-[#00B4D8] flex-shrink-0" />
+                        <Mail size={13} className="text-[#F59E0B] flex-shrink-0" />
                         <span>{office.email}</span>
                       </div>
                       <div className="flex items-center gap-3 text-sm text-white/50">
-                        <Clock size={13} className="text-[#00B4D8] flex-shrink-0" />
+                        <Clock size={13} className="text-[#F59E0B] flex-shrink-0" />
                         <span>{office.hours}</span>
                       </div>
                     </div>
@@ -221,7 +249,7 @@ export default function Contact() {
                 loading="lazy"
                 allowFullScreen
               />
-              <div className="absolute bottom-4 right-4 bg-[#0A0E1A]/90 border border-[#00B4D8]/30 px-4 py-2 text-xs font-mono-custom text-[#00B4D8] pointer-events-none">
+              <div className="absolute bottom-4 right-4 bg-[#0A0E1A]/90 border border-[#F59E0B]/30 px-4 py-2 text-xs font-mono-custom text-[#F59E0B] pointer-events-none">
                 29.7604° N, 95.3698° W
               </div>
             </div>

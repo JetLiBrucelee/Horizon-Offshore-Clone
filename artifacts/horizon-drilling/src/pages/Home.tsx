@@ -53,7 +53,7 @@ const projects = [
   },
   {
     name: "MERIDIAN ULTRA",
-    location: "West Africa",
+    location: "North Sea, UK",
     depth: "2,800m",
     year: "2024",
     status: "Active",
@@ -102,8 +102,8 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="flex items-center gap-3 mb-6"
             >
-              <div className="h-px w-12 bg-[#00B4D8]" />
-              <span className="font-mono-custom text-[#00B4D8] text-xs tracking-[0.3em] uppercase">Since 1979</span>
+              <div className="h-px w-12 bg-[#F59E0B]" />
+              <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">Since 1979</span>
             </motion.div>
 
             <motion.h1
@@ -113,7 +113,7 @@ export default function Home() {
               className="font-condensed font-black text-6xl sm:text-7xl md:text-8xl lg:text-[110px] leading-none tracking-tight uppercase mb-6 text-glow-teal"
             >
               Redefining<br />
-              <span className="text-[#00B4D8]">Offshore</span><br />
+              <span className="text-[#F59E0B]">Offshore</span><br />
               Excellence
             </motion.h1>
 
@@ -133,7 +133,7 @@ export default function Home() {
               className="flex flex-wrap gap-4"
             >
               <Link href="/fleet">
-                <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-8 py-4 bg-[#00B4D8] text-white hover:bg-[#0096C7] transition-all duration-300 glow-teal flex items-center gap-2">
+                <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-8 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 glow-teal flex items-center gap-2">
                   Explore Our Fleet <ArrowRight size={16} />
                 </button>
               </Link>
@@ -158,7 +158,7 @@ export default function Home() {
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
           >
-            <ChevronDown size={20} className="text-[#00B4D8]" />
+            <ChevronDown size={20} className="text-[#F59E0B]" />
           </motion.div>
         </motion.div>
       </section>
@@ -170,7 +170,7 @@ export default function Home() {
             {stats.map((stat, i) => (
               <ScrollReveal key={stat.label} delay={i * 0.1}>
                 <div className="text-center">
-                  <div className="font-condensed font-black text-5xl lg:text-6xl text-[#00B4D8] mb-2 font-mono-custom">
+                  <div className="font-condensed font-black text-5xl lg:text-6xl text-[#F59E0B] mb-2 font-mono-custom">
                     <CountUp end={stat.value} suffix={stat.suffix} />
                   </div>
                   <div className="font-condensed font-semibold text-sm tracking-[0.15em] uppercase text-white/50">
@@ -189,7 +189,7 @@ export default function Home() {
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">
               <div className="accent-line" />
-              <span className="font-mono-custom text-[#00B4D8] text-xs tracking-[0.3em] uppercase">Core Capabilities</span>
+              <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">Core Capabilities</span>
             </div>
             <h2 className="font-condensed font-black text-5xl lg:text-7xl uppercase tracking-tight mb-4">
               What We Do
@@ -203,18 +203,18 @@ export default function Home() {
             {services.map((s, i) => (
               <ScrollReveal key={s.title} delay={i * 0.15}>
                 <Link href={s.link}>
-                  <div className="group relative p-8 bg-[#0D1629] border border-white/5 hover:border-[#00B4D8]/40 transition-all duration-500 cursor-pointer overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#00B4D8]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="group relative p-8 bg-[#0D1629] border border-white/5 hover:border-[#F59E0B]/40 transition-all duration-500 cursor-pointer overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#F59E0B]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative z-10">
-                      <div className="text-4xl text-[#00B4D8] mb-6">{s.icon}</div>
-                      <h3 className="font-condensed font-bold text-2xl uppercase tracking-wide mb-4 group-hover:text-[#00B4D8] transition-colors duration-300">{s.title}</h3>
+                      <div className="text-4xl text-[#F59E0B] mb-6">{s.icon}</div>
+                      <h3 className="font-condensed font-bold text-2xl uppercase tracking-wide mb-4 group-hover:text-[#F59E0B] transition-colors duration-300">{s.title}</h3>
                       <p className="text-white/50 text-sm leading-relaxed mb-6">{s.desc}</p>
                       <div className="flex items-center gap-2 text-[#C8A96E] text-xs font-condensed font-bold tracking-[0.2em] uppercase">
                         <span>Learn More</span>
                         <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
-                    <div className="absolute bottom-0 left-0 h-0.5 bg-[#00B4D8] w-0 group-hover:w-full transition-all duration-500" />
+                    <div className="absolute bottom-0 left-0 h-0.5 bg-[#F59E0B] w-0 group-hover:w-full transition-all duration-500" />
                   </div>
                 </Link>
               </ScrollReveal>
@@ -240,7 +240,7 @@ export default function Home() {
                 <span className="font-mono-custom text-[#C8A96E] text-xs tracking-[0.3em] uppercase">Our Commitment</span>
               </div>
               <h2 className="font-condensed font-black text-5xl lg:text-7xl uppercase tracking-tight mb-6">
-                Safety First.<br /><span className="text-[#00B4D8]">Always.</span>
+                Safety First.<br /><span className="text-[#F59E0B]">Always.</span>
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-8">
                 With a zero-incident culture embedded at every level of our operations, Horizon Drilling maintains the offshore industry's most rigorous safety standards — protecting people, assets, and the environment.
@@ -253,8 +253,8 @@ export default function Home() {
                   { icon: Zap, label: "Emergency Response", value: "< 4 Minutes" },
                 ].map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-start gap-3">
-                    <div className="w-8 h-8 border border-[#00B4D8]/30 flex items-center justify-center flex-shrink-0">
-                      <Icon size={14} className="text-[#00B4D8]" />
+                    <div className="w-8 h-8 border border-[#F59E0B]/30 flex items-center justify-center flex-shrink-0">
+                      <Icon size={14} className="text-[#F59E0B]" />
                     </div>
                     <div>
                       <div className="font-condensed font-bold text-lg text-[#C8A96E]">{value}</div>
@@ -276,12 +276,12 @@ export default function Home() {
               <div>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="accent-line" />
-                  <span className="font-mono-custom text-[#00B4D8] text-xs tracking-[0.3em] uppercase">Portfolio</span>
+                  <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">Portfolio</span>
                 </div>
                 <h2 className="font-condensed font-black text-5xl lg:text-6xl uppercase tracking-tight">Featured Projects</h2>
               </div>
               <Link href="/projects" className="hidden md:block">
-                <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-6 py-3 border border-white/20 text-white/60 hover:border-[#00B4D8] hover:text-[#00B4D8] transition-all duration-300 flex items-center gap-2">
+                <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-6 py-3 border border-white/20 text-white/60 hover:border-[#F59E0B] hover:text-[#F59E0B] transition-all duration-300 flex items-center gap-2">
                   View All <ArrowRight size={14} />
                 </button>
               </Link>
@@ -291,25 +291,25 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {projects.map((p, i) => (
               <ScrollReveal key={p.name} delay={i * 0.1}>
-                <div className="group relative bg-[#0A0E1A] border border-white/5 hover:border-[#00B4D8]/30 transition-all duration-500 overflow-hidden">
+                <div className="group relative bg-[#0A0E1A] border border-white/5 hover:border-[#F59E0B]/30 transition-all duration-500 overflow-hidden">
                   {/* Image placeholder with gradient */}
                   <div className="h-48 bg-gradient-to-br from-[#1E2D4A] to-[#0A0E1A] relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-24 h-24 border border-[#00B4D8]/20 rotate-45 flex items-center justify-center">
-                        <div className="w-16 h-16 border border-[#00B4D8]/40 rotate-0 flex items-center justify-center">
-                          <span className="font-condensed font-black text-[#00B4D8]/60 text-xl -rotate-45">HD</span>
+                      <div className="w-24 h-24 border border-[#F59E0B]/20 rotate-45 flex items-center justify-center">
+                        <div className="w-16 h-16 border border-[#F59E0B]/40 rotate-0 flex items-center justify-center">
+                          <span className="font-condensed font-black text-[#F59E0B]/60 text-xl -rotate-45">HD</span>
                         </div>
                       </div>
                     </div>
                     <div className="absolute top-4 right-4">
-                      <span className="font-condensed font-bold text-xs tracking-wider px-3 py-1 bg-[#00B4D8]/20 text-[#00B4D8] border border-[#00B4D8]/30">
+                      <span className="font-condensed font-bold text-xs tracking-wider px-3 py-1 bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/30">
                         {p.status}
                       </span>
                     </div>
                   </div>
                   <div className="p-6">
                     <div className="font-mono-custom text-[#C8A96E] text-xs mb-2">{p.year} — {p.location}</div>
-                    <h3 className="font-condensed font-bold text-xl uppercase tracking-wide mb-2 group-hover:text-[#00B4D8] transition-colors">{p.name}</h3>
+                    <h3 className="font-condensed font-bold text-xl uppercase tracking-wide mb-2 group-hover:text-[#F59E0B] transition-colors">{p.name}</h3>
                     <div className="flex items-center gap-2 text-white/40 text-xs">
                       <span>Water Depth: {p.depth}</span>
                     </div>
@@ -329,12 +329,12 @@ export default function Home() {
               <div>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="accent-line" />
-                  <span className="font-mono-custom text-[#00B4D8] text-xs tracking-[0.3em] uppercase">Latest News</span>
+                  <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">Latest News</span>
                 </div>
                 <h2 className="font-condensed font-black text-5xl lg:text-6xl uppercase tracking-tight">Industry Insights</h2>
               </div>
               <Link href="/news" className="hidden md:block">
-                <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-6 py-3 border border-white/20 text-white/60 hover:border-[#00B4D8] hover:text-[#00B4D8] transition-all duration-300 flex items-center gap-2">
+                <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-6 py-3 border border-white/20 text-white/60 hover:border-[#F59E0B] hover:text-[#F59E0B] transition-all duration-300 flex items-center gap-2">
                   All News <ArrowRight size={14} />
                 </button>
               </Link>
@@ -345,14 +345,14 @@ export default function Home() {
             {news.map((n, i) => (
               <ScrollReveal key={n.title} delay={i * 0.1}>
                 <Link href="/news">
-                  <div className="group p-6 bg-[#0D1629] border border-white/5 hover:border-[#00B4D8]/30 transition-all duration-500 cursor-pointer">
+                  <div className="group p-6 bg-[#0D1629] border border-white/5 hover:border-[#F59E0B]/30 transition-all duration-500 cursor-pointer">
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="font-condensed font-bold text-xs tracking-[0.15em] uppercase px-3 py-1 bg-[#00B4D8]/10 text-[#00B4D8] border border-[#00B4D8]/20">
+                      <span className="font-condensed font-bold text-xs tracking-[0.15em] uppercase px-3 py-1 bg-[#F59E0B]/10 text-[#F59E0B] border border-[#F59E0B]/20">
                         {n.category}
                       </span>
                       <span className="font-mono-custom text-white/30 text-xs">{n.date}</span>
                     </div>
-                    <h3 className="font-condensed font-bold text-xl uppercase tracking-wide mb-3 group-hover:text-[#00B4D8] transition-colors leading-tight">
+                    <h3 className="font-condensed font-bold text-xl uppercase tracking-wide mb-3 group-hover:text-[#F59E0B] transition-colors leading-tight">
                       {n.title}
                     </h3>
                     <p className="text-white/40 text-sm leading-relaxed">{n.excerpt}</p>
@@ -374,13 +374,13 @@ export default function Home() {
           <ScrollReveal>
             <div className="accent-line mx-auto mb-6" />
             <h2 className="font-condensed font-black text-5xl lg:text-7xl uppercase tracking-tight mb-6">
-              Ready to Go <span className="text-[#00B4D8]">Deeper?</span>
+              Ready to Go <span className="text-[#F59E0B]">Deeper?</span>
             </h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto mb-10">
               Partner with Horizon Drilling for your next offshore project. Our team of experts is ready to engineer a solution for you.
             </p>
             <Link href="/contact">
-              <button className="font-condensed font-bold text-base tracking-[0.15em] uppercase px-12 py-5 bg-[#00B4D8] text-white hover:bg-[#0096C7] transition-all duration-300 glow-teal inline-flex items-center gap-3">
+              <button className="font-condensed font-bold text-base tracking-[0.15em] uppercase px-12 py-5 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 glow-teal inline-flex items-center gap-3">
                 Start a Conversation <ArrowRight size={18} />
               </button>
             </Link>

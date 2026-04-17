@@ -8,7 +8,7 @@ const PEOPLE_VIDEO = "https://www.sbmoffshore.com/wp-content/uploads/2024/09/SBM
 const timeline = [
   { year: "1979", event: "Horizon Drilling founded in Houston, Texas with a single jack-up rig" },
   { year: "1987", event: "First deepwater drilling contract — Gulf of Mexico, 1,200m depth" },
-  { year: "1995", event: "Expansion to West Africa; fleet grows to 12 assets" },
+  { year: "1995", event: "Expansion to North Sea and Middle East; fleet grows to 12 assets" },
   { year: "2003", event: "Launch of first-generation FPSO program in pre-salt Brazil" },
   { year: "2011", event: "Ultra-deepwater breakthrough — 3,000m+ successful campaign" },
   { year: "2018", event: "Digital transformation initiative; autonomous monitoring deployed fleet-wide" },
@@ -54,17 +54,17 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#0D1629] to-[#0A0E1A]" />
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
           <div className="w-full h-full" style={{
-            backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(0,180,216,0.3) 40px, rgba(0,180,216,0.3) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(0,180,216,0.3) 40px, rgba(0,180,216,0.3) 41px)"
+            backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(245,158,11,0.3) 40px, rgba(245,158,11,0.3) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(245,158,11,0.3) 40px, rgba(245,158,11,0.3) 41px)"
           }} />
         </div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">
               <div className="accent-line" />
-              <span className="font-mono-custom text-[#00B4D8] text-xs tracking-[0.3em] uppercase">About Us</span>
+              <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">About Us</span>
             </div>
             <h1 className="font-condensed font-black text-6xl lg:text-8xl uppercase tracking-tight mb-6">
-              45 Years of<br /><span className="text-[#00B4D8]">Offshore</span><br />Mastery
+              45 Years of<br /><span className="text-[#F59E0B]">Offshore</span><br />Mastery
             </h1>
             <p className="text-white/60 text-xl max-w-2xl leading-relaxed">
               From a single jack-up rig in the Gulf of Mexico to a global fleet of ultra-deepwater drillships and FPSOs, Horizon Drilling has set the standard for offshore excellence for nearly five decades.
@@ -99,7 +99,7 @@ export default function About() {
                   { label: "Revenue (2025)", value: "$4.2B" },
                 ].map(({ label, value }) => (
                   <div key={label} className="p-6 bg-[#0A0E1A] border border-white/5">
-                    <div className="font-condensed font-black text-4xl text-[#00B4D8] mb-1">{value}</div>
+                    <div className="font-condensed font-black text-4xl text-[#F59E0B] mb-1">{value}</div>
                     <div className="font-condensed text-sm tracking-[0.15em] uppercase text-white/40">{label}</div>
                   </div>
                 ))}
@@ -140,16 +140,16 @@ export default function About() {
             <h2 className="font-condensed font-black text-5xl uppercase tracking-tight mb-16">Our Journey</h2>
           </ScrollReveal>
           <div className="relative">
-            <div className="absolute left-0 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#00B4D8] via-[#C8A96E] to-transparent" />
+            <div className="absolute left-0 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#F59E0B] via-[#C8A96E] to-transparent" />
             <div className="space-y-10">
               {timeline.map((item, i) => (
                 <ScrollReveal key={item.year} delay={i * 0.05}>
                   <div className={`relative flex flex-col lg:flex-row gap-8 ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
                     <div className={`lg:w-1/2 ${i % 2 === 0 ? "lg:text-right lg:pr-12" : "lg:pl-12"} pl-8 lg:pl-0`}>
-                      <div className="font-condensed font-black text-3xl text-[#00B4D8] mb-2">{item.year}</div>
+                      <div className="font-condensed font-black text-3xl text-[#F59E0B] mb-2">{item.year}</div>
                       <p className="text-white/60 leading-relaxed">{item.event}</p>
                     </div>
-                    <div className="absolute left-[-5px] lg:left-1/2 lg:-translate-x-1/2 top-1 w-3 h-3 bg-[#00B4D8] rotate-45" />
+                    <div className="absolute left-[-5px] lg:left-1/2 lg:-translate-x-1/2 top-1 w-3 h-3 bg-[#F59E0B] rotate-45" />
                     <div className="lg:w-1/2" />
                   </div>
                 </ScrollReveal>
@@ -169,15 +169,15 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {leadership.map((person, i) => (
               <ScrollReveal key={person.name} delay={i * 0.1}>
-                <div className="group p-6 bg-[#0A0E1A] border border-white/5 hover:border-[#00B4D8]/30 transition-all duration-500">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#1E2D4A] to-[#0A0E1A] border border-[#00B4D8]/20 flex items-center justify-center mb-4 mx-auto">
-                    <span className="font-condensed font-black text-xl text-[#00B4D8]/60">
+                <div className="group p-6 bg-[#0A0E1A] border border-white/5 hover:border-[#F59E0B]/30 transition-all duration-500">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#1E2D4A] to-[#0A0E1A] border border-[#F59E0B]/20 flex items-center justify-center mb-4 mx-auto">
+                    <span className="font-condensed font-black text-xl text-[#F59E0B]/60">
                       {person.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
                     </span>
                   </div>
                   <div className="text-center">
                     <div className="font-condensed font-bold text-lg uppercase tracking-wide mb-1">{person.name}</div>
-                    <div className="text-[#00B4D8] text-xs font-condensed tracking-wider mb-2">{person.title}</div>
+                    <div className="text-[#F59E0B] text-xs font-condensed tracking-wider mb-2">{person.title}</div>
                     <div className="font-mono-custom text-white/30 text-xs">Since {person.since}</div>
                   </div>
                 </div>
@@ -197,9 +197,9 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map(({ icon: Icon, title, desc }, i) => (
               <ScrollReveal key={title} delay={i * 0.1}>
-                <div className="group p-8 bg-[#0D1629] border border-white/5 hover:border-[#00B4D8]/30 transition-all duration-500">
-                  <div className="w-12 h-12 border border-[#00B4D8]/40 flex items-center justify-center mb-6 group-hover:bg-[#00B4D8]/10 transition-colors duration-300">
-                    <Icon size={20} className="text-[#00B4D8]" />
+                <div className="group p-8 bg-[#0D1629] border border-white/5 hover:border-[#F59E0B]/30 transition-all duration-500">
+                  <div className="w-12 h-12 border border-[#F59E0B]/40 flex items-center justify-center mb-6 group-hover:bg-[#F59E0B]/10 transition-colors duration-300">
+                    <Icon size={20} className="text-[#F59E0B]" />
                   </div>
                   <h3 className="font-condensed font-bold text-2xl uppercase tracking-wide mb-4">{title}</h3>
                   <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
@@ -217,7 +217,7 @@ export default function About() {
             <h2 className="font-condensed font-black text-4xl lg:text-6xl uppercase mb-6">Join the Horizon Team</h2>
             <p className="text-white/50 max-w-xl mx-auto mb-8">Explore career opportunities at one of the most respected names in the offshore industry.</p>
             <Link href="/careers">
-              <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 bg-[#00B4D8] text-white hover:bg-[#0096C7] transition-all duration-300 inline-flex items-center gap-2">
+              <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 inline-flex items-center gap-2">
                 View Careers <ArrowRight size={16} />
               </button>
             </Link>

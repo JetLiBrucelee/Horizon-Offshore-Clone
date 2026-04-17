@@ -33,12 +33,12 @@ const projects = [
   },
   {
     name: "MERIDIAN ULTRA",
-    location: "West Africa",
+    location: "North Sea, UK",
     type: "Drilling" as FilterType,
     depth: "2,800m",
     year: "2024",
     status: "Active",
-    client: "African NOC",
+    client: "European NOC",
     scope: "Development drilling — 12 production wells",
     duration: "18 months",
   },
@@ -115,7 +115,7 @@ export default function Projects() {
           <ScrollReveal>
             <div className="flex items-center gap-3 mb-4">
               <div className="accent-line" />
-              <span className="font-mono-custom text-[#00B4D8] text-xs tracking-[0.3em] uppercase">Portfolio</span>
+              <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">Portfolio</span>
             </div>
             <h1 className="font-condensed font-black text-6xl lg:text-8xl uppercase tracking-tight mb-6">
               120+<br /><span className="text-[#C8A96E]">Projects</span><br />Delivered
@@ -139,8 +139,8 @@ export default function Projects() {
                   onClick={() => setFilter(f)}
                   className={`font-condensed font-bold text-sm tracking-[0.15em] uppercase px-6 py-2.5 border transition-all duration-300 ${
                     filter === f
-                      ? "bg-[#00B4D8] border-[#00B4D8] text-white"
-                      : "border-white/10 text-white/50 hover:border-[#00B4D8]/50 hover:text-white"
+                      ? "bg-[#F59E0B] border-[#F59E0B] text-white"
+                      : "border-white/10 text-white/50 hover:border-[#F59E0B]/50 hover:text-white"
                   }`}
                 >
                   {f}
@@ -160,18 +160,18 @@ export default function Projects() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.4, delay: i * 0.05 }}
                 >
-                  <div className="group bg-[#0A0E1A] border border-white/5 hover:border-[#00B4D8]/40 transition-all duration-500 overflow-hidden cursor-pointer">
+                  <div className="group bg-[#0A0E1A] border border-white/5 hover:border-[#F59E0B]/40 transition-all duration-500 overflow-hidden cursor-pointer">
                     {/* Card visual */}
                     <div className="h-44 bg-gradient-to-br from-[#1E2D4A] via-[#0D1629] to-[#0A0E1A] relative overflow-hidden">
                       <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                        <div className="w-32 h-32 border border-[#00B4D8] rotate-12 flex items-center justify-center">
+                        <div className="w-32 h-32 border border-[#F59E0B] rotate-12 flex items-center justify-center">
                           <div className="w-20 h-20 border border-[#C8A96E] -rotate-12" />
                         </div>
                       </div>
                       <div className="absolute top-3 left-3 right-3 flex items-start justify-between">
                         <span className={`font-condensed font-bold text-xs tracking-wider px-2.5 py-1 border ${
                           project.status === "Active"
-                            ? "bg-[#00B4D8]/15 text-[#00B4D8] border-[#00B4D8]/30"
+                            ? "bg-[#F59E0B]/15 text-[#F59E0B] border-[#F59E0B]/30"
                             : "bg-[#C8A96E]/15 text-[#C8A96E] border-[#C8A96E]/30"
                         }`}>
                           {project.status}
@@ -186,20 +186,20 @@ export default function Projects() {
                     </div>
 
                     <div className="p-5">
-                      <h3 className="font-condensed font-black text-xl uppercase tracking-wide mb-3 group-hover:text-[#00B4D8] transition-colors duration-300">
+                      <h3 className="font-condensed font-black text-xl uppercase tracking-wide mb-3 group-hover:text-[#F59E0B] transition-colors duration-300">
                         {project.name}
                       </h3>
                       <div className="space-y-2 mb-4">
                         <div className="flex items-center gap-2 text-xs text-white/40">
-                          <MapPin size={11} className="text-[#00B4D8] flex-shrink-0" />
+                          <MapPin size={11} className="text-[#F59E0B] flex-shrink-0" />
                           <span>{project.location}</span>
                         </div>
                         <div className="flex items-center gap-2 text-xs text-white/40">
-                          <Layers size={11} className="text-[#00B4D8] flex-shrink-0" />
+                          <Layers size={11} className="text-[#F59E0B] flex-shrink-0" />
                           <span>Depth: {project.depth}</span>
                         </div>
                         <div className="flex items-center gap-2 text-xs text-white/40">
-                          <Calendar size={11} className="text-[#00B4D8] flex-shrink-0" />
+                          <Calendar size={11} className="text-[#F59E0B] flex-shrink-0" />
                           <span>{project.duration}</span>
                         </div>
                       </div>
@@ -222,7 +222,7 @@ export default function Projects() {
             <h2 className="font-condensed font-black text-4xl lg:text-6xl uppercase mb-6">Plan Your Next Project</h2>
             <p className="text-white/50 max-w-lg mx-auto mb-8">Partner with Horizon Drilling for a project that demands excellence.</p>
             <Link href="/contact">
-              <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 bg-[#00B4D8] text-white hover:bg-[#0096C7] transition-all duration-300 inline-flex items-center gap-2">
+              <button className="font-condensed font-bold text-sm tracking-[0.15em] uppercase px-10 py-4 bg-[#F59E0B] text-white hover:bg-[#D97706] transition-all duration-300 inline-flex items-center gap-2">
                 Contact Our Team <ArrowRight size={16} />
               </button>
             </Link>
