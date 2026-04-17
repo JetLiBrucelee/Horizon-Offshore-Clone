@@ -1,8 +1,11 @@
 import { Router, type IRouter } from "express";
 import { Resend } from "resend";
+import { logger } from "../lib/logger";
 
 const router: IRouter = Router();
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function escapeHtml(str: string): string {
   return str
@@ -28,18 +31,24 @@ router.post("/contact", async (req, res) => {
     return;
   }
 
+  const trimmedEmail = String(email).trim();
+  if (!EMAIL_REGEX.test(trimmedEmail)) {
+    res.status(400).json({ error: "Please enter a valid email address." });
+    return;
+  }
+
   const safeName = escapeHtml(String(name));
   const safeCompany = company ? escapeHtml(String(company)) : "";
-  const safeEmail = escapeHtml(String(email));
+  const safeEmail = escapeHtml(trimmedEmail);
   const safePhone = phone ? escapeHtml(String(phone)) : "";
   const safeSubject = subject ? escapeHtml(String(subject)) : "";
   const safeMessage = escapeHtml(String(message));
 
   try {
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "Horizon Drilling Contact Form <noreply@horizondrillingsco.com>",
       to: [recipientEmail],
-      replyTo: safeEmail,
+      replyTo: trimmedEmail,
       subject: safeSubject ? `[Contact Form] ${safeSubject}` : `[Contact Form] New Inquiry from ${safeName}`,
       html: `
 <!DOCTYPE html>
@@ -154,9 +163,24 @@ router.post("/contact", async (req, res) => {
       `,
     });
 
+    if (error) {
+      logger.error(
+        { resendError: error, recipientEmail, from: trimmedEmail },
+        "Resend rejected the contact-form email",
+      );
+      res.status(502).json({
+        error: "We couldn't deliver your message right now. Please try again in a few minutes or email us directly.",
+      });
+      return;
+    }
+
+    logger.info(
+      { messageId: data?.id, recipientEmail, from: trimmedEmail },
+      "Contact-form email accepted by Resend",
+    );
     res.json({ success: true });
   } catch (err) {
-    console.error("Resend error:", err);
+    logger.error({ err }, "Unexpected error sending contact-form email");
     res.status(500).json({ error: "Failed to send email. Please try again later." });
   }
 });
