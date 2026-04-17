@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const HERO_VIDEOS = [
   "https://www.sbmoffshore.com/wp-content/uploads/2024/09/SBMO_WEB24_TOP-plans-people_Clip_MINI.mp4",
@@ -14,15 +14,11 @@ interface VideoHeroProps {
 
 export default function VideoHero({ interval = 8000 }: VideoHeroProps) {
   const [current, setCurrent] = useState(0);
-  const [prev, setPrev] = useState<number | null>(null);
-  const [transitioning, setTransitioning] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     timerRef.current = setTimeout(() => {
-      setPrev(current);
       setCurrent((c) => (c + 1) % HERO_VIDEOS.length);
-      setTransitioning(true);
     }, interval);
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
