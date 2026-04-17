@@ -6,10 +6,10 @@ import { useForm } from "react-hook-form";
 
 const offices = [
   {
-    city: "Houston",
+    city: "San Francisco",
     country: "USA — Headquarters",
-    address: "1500 Louisiana St, Suite 3100\nHouston, TX 77002",
-    phone: "+1 (713) 555-0192",
+    address: "77 Geary St\nSan Francisco, CA 94108",
+    phone: "(831) 243-0359",
     email: "support@horizondrillingsco.com",
     hours: "Mon – Fri: 07:00 – 18:00 CST",
   },
@@ -236,13 +236,13 @@ export default function Contact() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
           <ScrollReveal>
             <div className="accent-line mb-4" />
-            <h2 className="font-condensed font-black text-3xl uppercase tracking-tight mb-8">Houston Headquarters</h2>
+            <h2 className="font-condensed font-black text-3xl uppercase tracking-tight mb-8">San Francisco Headquarters</h2>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <div className="relative border border-white/5 overflow-hidden" style={{ height: "420px" }}>
               <iframe
-                title="Horizon Drilling Houston HQ"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-95.3898%2C29.7504%2C-95.3498%2C29.7704&layer=mapnik&marker=29.7604%2C-95.3698"
+                title="Horizon Drilling San Francisco HQ"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-122.4163%2C37.7828%2C-122.3963%2C37.7928&layer=mapnik&marker=37.7878%2C-122.4063"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85)", display: "block" }}
@@ -250,7 +250,7 @@ export default function Contact() {
                 allowFullScreen
               />
               <div className="absolute bottom-4 right-4 bg-[#0A0E1A]/90 border border-[#F59E0B]/30 px-4 py-2 text-xs font-mono-custom text-[#F59E0B] pointer-events-none">
-                29.7604° N, 95.3698° W
+                37.7878° N, 122.4063° W
               </div>
             </div>
           </ScrollReveal>
