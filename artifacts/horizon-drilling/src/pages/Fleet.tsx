@@ -17,6 +17,7 @@ const vessels = [
     generator: "4 × 7,200kW",
     dpClass: "DP3",
     accommodation: "200 POB",
+    image: "/fleet/hd-poseidon.png",
   },
   {
     name: "HD TRITON",
@@ -31,6 +32,7 @@ const vessels = [
     generator: "4 × 7,200kW",
     dpClass: "DP3",
     accommodation: "200 POB",
+    image: "/fleet/hd-triton.png",
   },
   {
     name: "HD OLYMPUS",
@@ -45,6 +47,7 @@ const vessels = [
     generator: "6 × 4,500kW",
     dpClass: "DP3",
     accommodation: "150 POB",
+    image: "/fleet/hd-olympus.png",
   },
   {
     name: "HD AURORA",
@@ -59,6 +62,7 @@ const vessels = [
     generator: "6 × 4,500kW",
     dpClass: "DP3",
     accommodation: "150 POB",
+    image: "/fleet/hd-aurora.png",
   },
   {
     name: "HD SOVEREIGN",
@@ -73,6 +77,7 @@ const vessels = [
     generator: "6 × 8,000kW",
     dpClass: "Spread Moored",
     accommodation: "120 POB",
+    image: "/fleet/hd-sovereign.png",
   },
   {
     name: "HD HORIZON",
@@ -87,6 +92,7 @@ const vessels = [
     generator: "6 × 9,000kW",
     dpClass: "Internal Turret",
     accommodation: "130 POB",
+    image: "/fleet/hd-horizon.png",
   },
 ];
 
@@ -147,26 +153,32 @@ export default function Fleet() {
               return (
                 <ScrollReveal key={vessel.name} delay={i * 0.08}>
                   <div className="group bg-[#0A0E1A] border border-white/5 hover:border-[#F59E0B]/30 transition-all duration-500 overflow-hidden">
-                    {/* Header */}
-                    <div className="relative h-32 bg-gradient-to-r from-[#1E2D4A] to-[#0D1629] p-6 overflow-hidden">
-                      <div className="absolute right-6 top-1/2 -translate-y-1/2 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <Icon size={80} />
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={vessel.image}
+                        alt={vessel.name}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0A0E1A] via-[#0A0E1A]/70 to-[#0A0E1A]/20" />
+                      <div className="absolute right-4 top-4 opacity-20 group-hover:opacity-30 transition-opacity">
+                        <Icon size={40} className="text-white" />
                       </div>
-                      <div className="relative z-10">
+                      <div className="absolute inset-0 p-6 flex flex-col justify-end">
                         <div className="flex items-center gap-3 mb-2">
-                          <span className={`font-condensed font-bold text-xs tracking-wider px-2.5 py-1 border ${
+                          <span className={`font-condensed font-bold text-xs tracking-wider px-2.5 py-1 border backdrop-blur-sm ${
                             vessel.status === "Active"
-                              ? "bg-[#F59E0B]/15 text-[#F59E0B] border-[#F59E0B]/30"
+                              ? "bg-[#F59E0B]/20 text-[#F59E0B] border-[#F59E0B]/40"
                               : vessel.status === "In Transit"
-                              ? "bg-[#C8A96E]/15 text-[#C8A96E] border-[#C8A96E]/30"
-                              : "bg-white/5 text-white/40 border-white/10"
+                              ? "bg-[#C8A96E]/20 text-[#C8A96E] border-[#C8A96E]/40"
+                              : "bg-white/10 text-white/60 border-white/20"
                           }`}>
                             {vessel.status}
                           </span>
-                          <span className="font-condensed text-xs text-white/30 tracking-wider">{vessel.type}</span>
+                          <span className="font-condensed text-xs text-white/50 tracking-wider">{vessel.type}</span>
                         </div>
-                        <h3 className="font-condensed font-black text-2xl uppercase tracking-wide">{vessel.name}</h3>
-                        <div className="flex items-center gap-1.5 text-white/40 text-xs mt-1">
+                        <h3 className="font-condensed font-black text-2xl uppercase tracking-wide drop-shadow-lg">{vessel.name}</h3>
+                        <div className="flex items-center gap-1.5 text-white/60 text-xs mt-1">
                           <MapPin size={11} className="text-[#F59E0B]" />
                           <span>{vessel.location}</span>
                         </div>

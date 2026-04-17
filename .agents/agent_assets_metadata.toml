@@ -1,0 +1,110 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "kw1quVbab1SXgj80r6H5v"
+uri = "file://artifacts/horizon-drilling/public/projects/meridian-ultra.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Wk_ZoOixVEZpZ6T0IGkkF"
+uri = "file://artifacts/horizon-drilling/public/projects/pioneer-subsea.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Ic5xfNd7PtmZ5Lg0tHwfq"
+uri = "file://artifacts/horizon-drilling/public/projects/vanguard-fpso.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "3CzkfyuoK87Y99uyoL2SV"
+uri = "file://artifacts/horizon-drilling/public/projects/kraken-drill.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "v96PIhr7Wk1todT1rKCLu"
+uri = "file://artifacts/horizon-drilling/public/projects/delta-subsea.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "eN0OItTnjAuDLTn79uOUg"
+uri = "file://artifacts/horizon-drilling/public/projects/titan-fpso.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "CNfCGQsB6O9NhlY1Pt4zo"
+uri = "file://artifacts/horizon-drilling/public/fleet/hd-poseidon.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "JkDIW4cjEJSsbqaYFCTTo"
+uri = "file://artifacts/horizon-drilling/public/fleet/hd-triton.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "DsEFVRO_Ewrw_I_JrVay0"
+uri = "file://artifacts/horizon-drilling/public/fleet/hd-olympus.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "6PlMRGQ6Zq63_MG_GicF_"
+uri = "file://artifacts/horizon-drilling/public/fleet/hd-aurora.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "hWg7fpqJmHM1xt9LmS31Y"
+uri = "file://artifacts/horizon-drilling/public/fleet/hd-sovereign.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "_QkD4y6zo1-GrW0rfVXJD"
+uri = "file://artifacts/horizon-drilling/public/fleet/hd-horizon.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "dQSIPTLZ8EYHm-mLdhiww"
+uri = "file://artifacts/horizon-drilling/public/services/drilling-operations.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "2dwo3T4rLQw5B3ajxo2Cc"
+uri = "file://artifacts/horizon-drilling/public/services/fpso-solutions.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "pSurVgi9EAzxUdEQaD1Dh"
+uri = "file://artifacts/horizon-drilling/public/services/subsea-engineering.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "X-3V7mJJJR2OmWUayeEn7"
+uri = "file://artifacts/horizon-drilling/public/services/marine-operations.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "sOakr1tO64Fu04gs87Tw9"
+uri = "file://artifacts/horizon-drilling/public/services/well-management.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "WsKJNhFmYi9TG6B0drQhQ"
+uri = "file://artifacts/horizon-drilling/public/services/digital-solutions.png"
+type = "image"
+title = "generated_image"

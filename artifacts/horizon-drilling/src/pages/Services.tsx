@@ -7,6 +7,7 @@ import { Link } from "wouter";
 const services = [
   {
     icon: Drill,
+    image: "/services/drilling-operations.png",
     title: "Drilling Operations",
     tagline: "Ultra-deepwater capability to 4,000m",
     desc: "Horizon Drilling operates one of the world's most technically advanced fleets of drillships and semi-submersible rigs. Our vessels are designed for the most demanding ultra-deepwater environments, equipped with dual-activity capability, managed pressure drilling, and next-generation BOP systems.",
@@ -26,6 +27,7 @@ const services = [
   },
   {
     icon: Anchor,
+    image: "/services/fpso-solutions.png",
     title: "FPSO Solutions",
     tagline: "Floating production from concept to first oil",
     desc: "Our FPSO program covers the complete lifecycle — from engineering and procurement through construction, hook-up, commissioning, and long-term operations. Horizon Drilling's FPSO fleet processes over 900,000 barrels of oil per day across three continents.",
@@ -45,6 +47,7 @@ const services = [
   },
   {
     icon: Waves,
+    image: "/services/subsea-engineering.png",
     title: "Subsea Engineering",
     tagline: "Integrated subsea systems and integrity management",
     desc: "Our subsea division manages complete infrastructure from wellhead to riser — designing, installing, and maintaining subsea trees, manifolds, umbilicals, risers, and flowlines across the world's most complex deepwater fields.",
@@ -64,6 +67,7 @@ const services = [
   },
   {
     icon: Ship,
+    image: "/services/marine-operations.png",
     title: "Marine Operations",
     tagline: "Fleet management and marine logistics",
     desc: "Supporting our entire fleet are over 40 marine support vessels — from anchor handling tugs and platform supply vessels to accommodation vessels and pipe-layers. Our marine logistics network ensures seamless operations worldwide.",
@@ -83,6 +87,7 @@ const services = [
   },
   {
     icon: BarChart3,
+    image: "/services/well-management.png",
     title: "Well Management",
     tagline: "Integrated well planning and reservoir optimization",
     desc: "From well planning and drilling program design to production optimization and abandonment — our integrated well management team works alongside client reservoir engineers to maximize recovery while minimizing cost and risk.",
@@ -102,6 +107,7 @@ const services = [
   },
   {
     icon: Cpu,
+    image: "/services/digital-solutions.png",
     title: "Digital Solutions",
     tagline: "AI-powered monitoring and predictive operations",
     desc: "Our HD Digital platform integrates real-time sensor data across the entire fleet — enabling predictive maintenance, autonomous drilling optimization, and remote operations management from our global digital operations centers.",
@@ -158,15 +164,24 @@ export default function Services() {
                 <ScrollReveal key={service.title} delay={i * 0.05}>
                   <div className={`border transition-all duration-500 ${isOpen ? "border-[#F59E0B]/40 bg-[#0A0E1A]" : "border-white/5 bg-[#0A0E1A] hover:border-white/10"}`}>
                     <button
-                      className="w-full flex items-center justify-between p-6 lg:p-8 text-left"
+                      className="w-full flex items-center justify-between p-4 lg:p-6 text-left"
                       onClick={() => setExpanded(isOpen ? null : i)}
                     >
-                      <div className="flex items-center gap-6">
-                        <div className={`w-12 h-12 flex items-center justify-center border transition-colors duration-300 ${isOpen ? "border-[#F59E0B] bg-[#F59E0B]/10" : "border-white/10"}`}>
-                          <Icon size={20} className={isOpen ? "text-[#F59E0B]" : "text-white/50"} />
+                      <div className="flex items-center gap-5 min-w-0">
+                        <div className={`relative w-24 h-20 lg:w-32 lg:h-24 flex-shrink-0 overflow-hidden border transition-colors duration-300 ${isOpen ? "border-[#F59E0B]/50" : "border-white/10"}`}>
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                          <div className={`absolute inset-0 transition-opacity duration-300 ${isOpen ? "bg-[#F59E0B]/10" : "bg-[#0A0E1A]/40 group-hover:bg-[#0A0E1A]/20"}`} />
+                          <div className="absolute bottom-1 left-1 w-7 h-7 flex items-center justify-center bg-[#0A0E1A]/85 border border-[#F59E0B]/40">
+                            <Icon size={13} className="text-[#F59E0B]" />
+                          </div>
                         </div>
-                        <div>
-                          <h3 className={`font-condensed font-bold text-2xl uppercase tracking-wide transition-colors duration-300 ${isOpen ? "text-[#F59E0B]" : "text-white"}`}>
+                        <div className="min-w-0">
+                          <h3 className={`font-condensed font-bold text-xl lg:text-2xl uppercase tracking-wide transition-colors duration-300 ${isOpen ? "text-[#F59E0B]" : "text-white"}`}>
                             {service.title}
                           </h3>
                           <p className="text-white/40 text-sm mt-1">{service.tagline}</p>

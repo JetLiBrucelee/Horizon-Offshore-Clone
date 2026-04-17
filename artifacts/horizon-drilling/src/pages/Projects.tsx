@@ -19,6 +19,7 @@ const projects = [
     client: "Major IOC",
     scope: "Ultra-deepwater exploration & appraisal campaign — 8 wells",
     duration: "24 months",
+    image: "/projects/atlas-deepwater.jpg",
   },
   {
     name: "NEPTUNE FPSO",
@@ -30,6 +31,7 @@ const projects = [
     client: "National Oil Company",
     scope: "FPSO operations — 150,000 BOPD pre-salt production",
     duration: "20-year contract",
+    image: "/projects/neptune-fpso.png",
   },
   {
     name: "MERIDIAN ULTRA",
@@ -41,6 +43,7 @@ const projects = [
     client: "European NOC",
     scope: "Development drilling — 12 production wells",
     duration: "18 months",
+    image: "/projects/meridian-ultra.png",
   },
   {
     name: "PIONEER SUBSEA",
@@ -52,6 +55,7 @@ const projects = [
     client: "European Major",
     scope: "Subsea tieback — 3 satellite fields to host FPSO",
     duration: "30 months",
+    image: "/projects/pioneer-subsea.png",
   },
   {
     name: "VANGUARD FPSO",
@@ -63,6 +67,7 @@ const projects = [
     client: "International Consortium",
     scope: "New-build FPSO — 200,000 BOPD, first oil 2025",
     duration: "25-year contract",
+    image: "/projects/vanguard-fpso.png",
   },
   {
     name: "KRAKEN DRILL",
@@ -74,6 +79,7 @@ const projects = [
     client: "Norwegian NOC",
     scope: "High-pressure, high-temperature exploration",
     duration: "12 months",
+    image: "/projects/kraken-drill.png",
   },
   {
     name: "DELTA SUBSEA",
@@ -85,6 +91,7 @@ const projects = [
     client: "IOC Consortium",
     scope: "Full SURF installation — 45km flowlines",
     duration: "28 months",
+    image: "/projects/delta-subsea.png",
   },
   {
     name: "TITAN FPSO",
@@ -96,6 +103,7 @@ const projects = [
     client: "Asia Pacific NOC",
     scope: "FPSO conversion — 100,000 BOPD processing capacity",
     duration: "Life extension project",
+    image: "/projects/titan-fpso.png",
   },
 ];
 
@@ -161,25 +169,26 @@ export default function Projects() {
                   transition={{ duration: 0.4, delay: i * 0.05 }}
                 >
                   <div className="group bg-[#0A0E1A] border border-white/5 hover:border-[#F59E0B]/40 transition-all duration-500 overflow-hidden cursor-pointer">
-                    {/* Card visual */}
-                    <div className="h-44 bg-gradient-to-br from-[#1E2D4A] via-[#0D1629] to-[#0A0E1A] relative overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                        <div className="w-32 h-32 border border-[#F59E0B] rotate-12 flex items-center justify-center">
-                          <div className="w-20 h-20 border border-[#C8A96E] -rotate-12" />
-                        </div>
-                      </div>
+                    <div className="h-44 relative overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E1A] via-[#0A0E1A]/30 to-[#0A0E1A]/40" />
                       <div className="absolute top-3 left-3 right-3 flex items-start justify-between">
-                        <span className={`font-condensed font-bold text-xs tracking-wider px-2.5 py-1 border ${
+                        <span className={`font-condensed font-bold text-xs tracking-wider px-2.5 py-1 border backdrop-blur-sm ${
                           project.status === "Active"
-                            ? "bg-[#F59E0B]/15 text-[#F59E0B] border-[#F59E0B]/30"
-                            : "bg-[#C8A96E]/15 text-[#C8A96E] border-[#C8A96E]/30"
+                            ? "bg-[#F59E0B]/20 text-[#F59E0B] border-[#F59E0B]/40"
+                            : "bg-[#C8A96E]/20 text-[#C8A96E] border-[#C8A96E]/40"
                         }`}>
                           {project.status}
                         </span>
-                        <span className="font-mono-custom text-white/30 text-xs">{project.year}</span>
+                        <span className="font-mono-custom text-white/70 text-xs bg-[#0A0E1A]/60 backdrop-blur-sm px-2 py-0.5">{project.year}</span>
                       </div>
                       <div className="absolute bottom-3 left-3">
-                        <span className="font-condensed text-xs tracking-wider px-2 py-0.5 bg-[#0A0E1A]/80 text-white/40 border border-white/5">
+                        <span className="font-condensed text-xs tracking-wider px-2 py-0.5 bg-[#0A0E1A]/85 backdrop-blur-sm text-white/70 border border-white/10">
                           {project.type}
                         </span>
                       </div>

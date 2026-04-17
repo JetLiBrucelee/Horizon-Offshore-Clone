@@ -17,19 +17,19 @@ const stats = [
 
 const services = [
   {
-    icon: "⬡",
+    image: "/services/drilling-operations.png",
     title: "Drilling Operations",
     desc: "State-of-the-art drilling vessels and platforms operating in ultra-deepwater environments worldwide.",
     link: "/services",
   },
   {
-    icon: "◈",
+    image: "/services/fpso-solutions.png",
     title: "FPSO Solutions",
     desc: "Floating Production Storage and Offloading units engineered for maximum yield and reliability.",
     link: "/services",
   },
   {
-    icon: "◇",
+    image: "/services/subsea-engineering.png",
     title: "Subsea Engineering",
     desc: "Advanced subsea systems integrating cutting-edge technology with decades of deepwater expertise.",
     link: "/services",
@@ -43,6 +43,7 @@ const projects = [
     depth: "3,200m",
     year: "2024",
     status: "Active",
+    image: "/projects/atlas-deepwater.jpg",
   },
   {
     name: "NEPTUNE FPSO",
@@ -50,6 +51,7 @@ const projects = [
     depth: "2,100m",
     year: "2023",
     status: "Active",
+    image: "/projects/neptune-fpso.png",
   },
   {
     name: "MERIDIAN ULTRA",
@@ -57,6 +59,7 @@ const projects = [
     depth: "2,800m",
     year: "2024",
     status: "Active",
+    image: "/projects/meridian-ultra.png",
   },
 ];
 
@@ -203,10 +206,18 @@ export default function Home() {
             {services.map((s, i) => (
               <ScrollReveal key={s.title} delay={i * 0.15}>
                 <Link href={s.link}>
-                  <div className="group relative p-8 bg-[#0D1629] border border-white/5 hover:border-[#F59E0B]/40 transition-all duration-500 cursor-pointer overflow-hidden">
+                  <div className="group relative bg-[#0D1629] border border-white/5 hover:border-[#F59E0B]/40 transition-all duration-500 cursor-pointer overflow-hidden">
+                    <div className="relative h-44 overflow-hidden">
+                      <img
+                        src={s.image}
+                        alt={s.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0D1629] via-[#0D1629]/40 to-transparent" />
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#F59E0B]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative z-10">
-                      <div className="text-4xl text-[#F59E0B] mb-6">{s.icon}</div>
+                    <div className="relative z-10 p-8">
                       <h3 className="font-condensed font-bold text-2xl uppercase tracking-wide mb-4 group-hover:text-[#F59E0B] transition-colors duration-300">{s.title}</h3>
                       <p className="text-white/50 text-sm leading-relaxed mb-6">{s.desc}</p>
                       <div className="flex items-center gap-2 text-[#C8A96E] text-xs font-condensed font-bold tracking-[0.2em] uppercase">
@@ -292,17 +303,16 @@ export default function Home() {
             {projects.map((p, i) => (
               <ScrollReveal key={p.name} delay={i * 0.1}>
                 <div className="group relative bg-[#0A0E1A] border border-white/5 hover:border-[#F59E0B]/30 transition-all duration-500 overflow-hidden">
-                  {/* Image placeholder with gradient */}
-                  <div className="h-48 bg-gradient-to-br from-[#1E2D4A] to-[#0A0E1A] relative overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-24 h-24 border border-[#F59E0B]/20 rotate-45 flex items-center justify-center">
-                        <div className="w-16 h-16 border border-[#F59E0B]/40 rotate-0 flex items-center justify-center">
-                          <span className="font-condensed font-black text-[#F59E0B]/60 text-xl -rotate-45">HD</span>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="h-48 relative overflow-hidden">
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E1A] via-[#0A0E1A]/30 to-transparent" />
                     <div className="absolute top-4 right-4">
-                      <span className="font-condensed font-bold text-xs tracking-wider px-3 py-1 bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/30">
+                      <span className="font-condensed font-bold text-xs tracking-wider px-3 py-1 bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/30 backdrop-blur-sm">
                         {p.status}
                       </span>
                     </div>
