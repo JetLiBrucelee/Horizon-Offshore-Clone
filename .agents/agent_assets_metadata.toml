@@ -110,19 +110,19 @@ type = "image"
 title = "generated_image"
 
 [[generated]]
-id = "XujiB0a30a--TT9dq1k9K"
-uri = "file://artifacts/horizon-drilling/public/team/elena-vasquez.jpg"
+id = "garry-bills-coo-portrait"
+uri = "file://artifacts/horizon-drilling/public/team/garry-bills.jpg"
 type = "image"
-title = "elena vasquez coo portrait"
+title = "garry bills coo portrait (user provided)"
 
 [[generated]]
-id = "h0L4pwpRb_4jh2fveX9xT"
+id = "david-mitchell-cto-portrait-v2"
 uri = "file://artifacts/horizon-drilling/public/team/david-mitchell.jpg"
 type = "image"
-title = "david mitchell cto portrait"
+title = "david mitchell cto portrait (user provided)"
 
 [[generated]]
-id = "1IEV6nakowWg-YcaRiBVR"
-uri = "file://artifacts/horizon-drilling/public/team/sarah-chen.jpg"
+id = "dianne-williams-cfo-portrait"
+uri = "file://artifacts/horizon-drilling/public/team/dianne-williams.jpg"
 type = "image"
-title = "sarah chen cfo portrait"
+title = "dianne williams cfo portrait (user provided)"
