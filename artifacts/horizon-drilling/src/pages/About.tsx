@@ -17,10 +17,10 @@ const timeline = [
 ];
 
 const leadership = [
-  { name: "James Anderson", title: "Founder / CEO", since: "2014", image: "/team/james-anderson.png" },
-  { name: "Elena Vasquez", title: "Chief Operating Officer", since: "2017", image: "/team/elena-vasquez.png" },
-  { name: "David Mitchell", title: "Chief Technology Officer", since: "2019", image: "/team/david-mitchell.png" },
-  { name: "Sarah Chen", title: "Chief Financial Officer", since: "2020", image: "/team/sarah-chen.png" },
+  { name: "James Anderson", title: "Founder / CEO", since: "2014", image: "/team/james-anderson.jpg" },
+  { name: "Elena Vasquez", title: "Chief Operating Officer", since: "2017", image: "/team/elena-vasquez.jpg" },
+  { name: "David Mitchell", title: "Chief Technology Officer", since: "2019", image: "/team/david-mitchell.jpg" },
+  { name: "Sarah Chen", title: "Chief Financial Officer", since: "2020", image: "/team/sarah-chen.jpg" },
 ];
 
 const values = [
