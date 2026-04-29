@@ -116,10 +116,10 @@ type = "image"
 title = "garry bills coo portrait (user provided)"
 
 [[generated]]
-id = "david-bills-cto-portrait"
-uri = "file://artifacts/horizon-drilling/public/team/david-bills.jpg"
+id = "david-johnson-cto-portrait"
+uri = "file://artifacts/horizon-drilling/public/team/david-johnson.jpg"
 type = "image"
-title = "david bills cto portrait (user provided)"
+title = "david johnson cto portrait (user provided)"
 
 [[generated]]
 id = "dianne-williams-cfo-portrait"

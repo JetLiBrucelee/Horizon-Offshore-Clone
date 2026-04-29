@@ -19,7 +19,7 @@ const timeline = [
 const leadership = [
   { name: "James Anderson", title: "Founder / CEO", since: "1986", image: "/team/james-anderson.jpg" },
   { name: "Garry Bills", title: "Chief Operating Officer", since: "2007", image: "/team/garry-bills.jpg" },
-  { name: "David Bills", title: "Chief Technology Officer", since: "2005", image: "/team/david-bills.jpg" },
+  { name: "David Johnson", title: "Chief Technology Officer", since: "2005", image: "/team/david-johnson.jpg" },
   { name: "Dianne Williams", title: "Chief Financial Officer", since: "2009", image: "/team/dianne-williams.jpg" },
 ];
 
