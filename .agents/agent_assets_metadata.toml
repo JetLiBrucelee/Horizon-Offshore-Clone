@@ -108,3 +108,21 @@ id = "WsKJNhFmYi9TG6B0drQhQ"
 uri = "file://artifacts/horizon-drilling/public/services/digital-solutions.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "XujiB0a30a--TT9dq1k9K"
+uri = "file://artifacts/horizon-drilling/public/team/elena-vasquez.png"
+type = "image"
+title = "elena vasquez coo portrait"
+
+[[generated]]
+id = "h0L4pwpRb_4jh2fveX9xT"
+uri = "file://artifacts/horizon-drilling/public/team/david-mitchell.png"
+type = "image"
+title = "david mitchell cto portrait"
+
+[[generated]]
+id = "1IEV6nakowWg-YcaRiBVR"
+uri = "file://artifacts/horizon-drilling/public/team/sarah-chen.png"
+type = "image"
+title = "sarah chen cfo portrait"

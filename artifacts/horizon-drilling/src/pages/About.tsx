@@ -17,10 +17,10 @@ const timeline = [
 ];
 
 const leadership = [
-  { name: "James R. Calloway", title: "Chief Executive Officer", since: "2014" },
-  { name: "Elena Vasquez", title: "Chief Operating Officer", since: "2017" },
-  { name: "Marcus Okonkwo", title: "Chief Technology Officer", since: "2019" },
-  { name: "Sarah Chen", title: "Chief Financial Officer", since: "2020" },
+  { name: "James Anderson", title: "Founder / CEO", since: "2014", image: "/team/james-anderson.png" },
+  { name: "Elena Vasquez", title: "Chief Operating Officer", since: "2017", image: "/team/elena-vasquez.png" },
+  { name: "David Mitchell", title: "Chief Technology Officer", since: "2019", image: "/team/david-mitchell.png" },
+  { name: "Sarah Chen", title: "Chief Financial Officer", since: "2020", image: "/team/sarah-chen.png" },
 ];
 
 const values = [
@@ -160,7 +160,7 @@ export default function About() {
       </section>
 
       {/* Leadership */}
-      <section className="section-padding bg-[#0D1629]">
+      <section id="leadership" className="section-padding bg-[#0D1629] scroll-mt-24">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal>
             <div className="accent-line mb-4" />
@@ -169,13 +169,17 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {leadership.map((person, i) => (
               <ScrollReveal key={person.name} delay={i * 0.1}>
-                <div className="group p-6 bg-[#0A0E1A] border border-white/5 hover:border-[#F59E0B]/30 transition-all duration-500">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#1E2D4A] to-[#0A0E1A] border border-[#F59E0B]/20 flex items-center justify-center mb-4 mx-auto">
-                    <span className="font-condensed font-black text-xl text-[#F59E0B]/60">
-                      {person.name.split(" ").map(n => n[0]).join("").slice(0, 2)}
-                    </span>
+                <div className="group bg-[#0A0E1A] border border-white/5 hover:border-[#F59E0B]/40 transition-all duration-500 overflow-hidden">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-[#1E2D4A] to-[#0A0E1A]">
+                    <img
+                      src={person.image}
+                      alt={`${person.name}, ${person.title}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0A0E1A] via-[#0A0E1A]/60 to-transparent pointer-events-none" />
                   </div>
-                  <div className="text-center">
+                  <div className="p-5 text-center">
                     <div className="font-condensed font-bold text-lg uppercase tracking-wide mb-1">{person.name}</div>
                     <div className="text-[#F59E0B] text-xs font-condensed tracking-wider mb-2">{person.title}</div>
                     <div className="font-mono-custom text-white/30 text-xs">Since {person.since}</div>

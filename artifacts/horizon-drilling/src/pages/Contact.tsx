@@ -125,7 +125,7 @@ export default function Contact() {
                       <input
                         {...register("name", { required: "Name is required" })}
                         className={`w-full bg-[#0A0E1A] border px-4 py-3.5 text-sm text-white focus:outline-none transition-colors duration-200 ${errors.name ? "border-red-500/50" : "border-white/10 focus:border-[#F59E0B]"}`}
-                        placeholder="James Calloway"
+                        placeholder="James Anderson"
                       />
                     </div>
                     <div>
