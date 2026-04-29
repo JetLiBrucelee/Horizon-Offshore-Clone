@@ -6,9 +6,9 @@ import { Link } from "wouter";
 const PEOPLE_VIDEO = "https://www.sbmoffshore.com/wp-content/uploads/2024/09/SBMO_WEB24_TOP-plans-people_Clip_MINI.mp4";
 
 const timeline = [
-  { year: "1979", event: "Horizon Drilling founded in Houston, Texas with a single jack-up rig" },
-  { year: "1987", event: "First deepwater drilling contract — Gulf of Mexico, 1,200m depth" },
-  { year: "1995", event: "Expansion to North Sea and Middle East; fleet grows to 12 assets" },
+  { year: "1989", event: "Horizon Drilling founded in Houston, Texas with a single jack-up rig" },
+  { year: "1995", event: "First deepwater drilling contract — Gulf of Mexico, 1,200m depth" },
+  { year: "2000", event: "Expansion to North Sea and Middle East; fleet grows to 12 assets" },
   { year: "2003", event: "Launch of first-generation FPSO program in pre-salt Brazil" },
   { year: "2011", event: "Ultra-deepwater breakthrough — 3,000m+ successful campaign" },
   { year: "2018", event: "Digital transformation initiative; autonomous monitoring deployed fleet-wide" },
@@ -64,10 +64,10 @@ export default function About() {
               <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">About Us</span>
             </div>
             <h1 className="font-condensed font-black text-6xl lg:text-8xl uppercase tracking-tight mb-6">
-              45 Years of<br /><span className="text-[#F59E0B]">Offshore</span><br />Mastery
+              35 Years of<br /><span className="text-[#F59E0B]">Offshore</span><br />Mastery
             </h1>
             <p className="text-white/60 text-xl max-w-2xl leading-relaxed">
-              From a single jack-up rig in the Gulf of Mexico to a global fleet of ultra-deepwater drillships and FPSOs, Horizon Drilling has set the standard for offshore excellence for nearly five decades.
+              From a single jack-up rig in the Gulf of Mexico to a global fleet of ultra-deepwater drillships and FPSOs, Horizon Drilling has set the standard for offshore excellence for over three decades.
             </p>
           </ScrollReveal>
         </div>
@@ -81,7 +81,7 @@ export default function About() {
               <div className="accent-line mb-6" />
               <h2 className="font-condensed font-black text-5xl uppercase tracking-tight mb-6">Our Story</h2>
               <p className="text-white/60 leading-relaxed mb-6">
-                Horizon Drilling was founded in 1979 by a group of petroleum engineers who believed the future of energy lay beneath the ocean floor. Starting with a single self-elevating platform in the Gulf of Mexico, we grew methodically — always reinvesting in technology, talent, and safety systems.
+                Horizon Drilling was founded in 1989 by a group of petroleum engineers who believed the future of energy lay beneath the ocean floor. Starting with a single self-elevating platform in the Gulf of Mexico, we grew methodically — always reinvesting in technology, talent, and safety systems.
               </p>
               <p className="text-white/60 leading-relaxed mb-6">
                 Today we operate one of the world's most advanced fleets of deepwater assets, managing complex drilling programs across 38 nations from the Arctic Circle to the Equatorial Pacific.

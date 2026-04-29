@@ -9,7 +9,7 @@ import CountUp from "@/components/CountUp";
 const WAVE_VIDEO = "https://www.sbmoffshore.com/wp-content/uploads/2024/09/SBMO_WEB24_TOP-wave_Clip_MINI.mp4";
 
 const stats = [
-  { value: 45, suffix: "+", label: "Years of Excellence" },
+  { value: 35, suffix: "+", label: "Years of Excellence" },
   { value: 120, suffix: "+", label: "Global Projects" },
   { value: 38, suffix: "", label: "Nations Served" },
   { value: 99, suffix: ".2%", label: "Operational Uptime" },
@@ -106,7 +106,7 @@ export default function Home() {
               className="flex items-center gap-3 mb-6"
             >
               <div className="h-px w-12 bg-[#F59E0B]" />
-              <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">Since 1979</span>
+              <span className="font-mono-custom text-[#F59E0B] text-xs tracking-[0.3em] uppercase">Since 1989</span>
             </motion.div>
 
             <motion.h1
