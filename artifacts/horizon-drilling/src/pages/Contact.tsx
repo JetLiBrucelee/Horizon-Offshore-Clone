@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, ArrowRight, Globe } from "lucide-react";
+import { MapPin, Mail, Clock, ArrowRight, Globe } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useForm } from "react-hook-form";
 
@@ -9,7 +9,6 @@ const offices = [
     city: "San Francisco",
     country: "USA — Headquarters",
     address: "77 Geary St\nSan Francisco, CA 94108",
-    phone: "(831) 243-0359",
     email: "support@horizondrillingsco.com",
     hours: "Mon – Fri: 07:00 – 18:00 CST",
   },
@@ -17,7 +16,6 @@ const offices = [
     city: "Rotterdam",
     country: "Netherlands",
     address: "Boompjes 40, 3011 XB\nRotterdam",
-    phone: "+31 10 555 0847",
     email: "support@horizondrillingsco.com",
     hours: "Mon – Fri: 08:00 – 17:00 CET",
   },
@@ -25,7 +23,6 @@ const offices = [
     city: "Rio de Janeiro",
     country: "Brazil",
     address: "Av. Rio Branco 181, Suite 2200\nCentro, Rio de Janeiro",
-    phone: "+55 21 3555 0194",
     email: "support@horizondrillingsco.com",
     hours: "Mon – Fri: 08:00 – 17:00 BRT",
   },
@@ -33,7 +30,6 @@ const offices = [
     city: "Singapore",
     country: "Singapore",
     address: "One Raffles Quay, #28-01\nSingapore 048583",
-    phone: "+65 6555 0392",
     email: "support@horizondrillingsco.com",
     hours: "Mon – Fri: 08:30 – 17:30 SGT",
   },
@@ -209,10 +205,6 @@ export default function Contact() {
                       <div className="flex items-start gap-3 text-sm text-white/50">
                         <MapPin size={13} className="text-[#F59E0B] mt-0.5 flex-shrink-0" />
                         <span className="whitespace-pre-line">{office.address}</span>
-                      </div>
-                      <div className="flex items-center gap-3 text-sm text-white/50">
-                        <Phone size={13} className="text-[#F59E0B] flex-shrink-0" />
-                        <span>{office.phone}</span>
                       </div>
                       <div className="flex items-center gap-3 text-sm text-white/50">
                         <Mail size={13} className="text-[#F59E0B] flex-shrink-0" />

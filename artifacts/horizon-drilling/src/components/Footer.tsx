@@ -114,10 +114,6 @@ export default function Footer() {
                 <span>77 Geary St<br />San Francisco, CA 94108, USA</span>
               </li>
               <li className="flex items-center gap-3 text-white/50 text-sm">
-                <Phone size={15} className="text-[#F59E0B] flex-shrink-0" />
-                <span>(831) 243-0359</span>
-              </li>
-              <li className="flex items-center gap-3 text-white/50 text-sm">
                 <Mail size={15} className="text-[#F59E0B] flex-shrink-0" />
                 <span>support@horizondrillingsco.com</span>
               </li>
