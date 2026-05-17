@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Linkedin, Twitter, Youtube, Instagram, MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
+import { Linkedin, Twitter, Youtube, Instagram, MapPin, Mail, ArrowUpRight } from "lucide-react";
 
 const footerLinks = {
   company: [
