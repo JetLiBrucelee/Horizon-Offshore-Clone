@@ -133,24 +133,14 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Email *</label>
-                      <input
-                        {...register("email", { required: "Email is required" })}
-                        type="email"
-                        className={`w-full bg-[#0A0E1A] border px-4 py-3.5 text-sm text-white focus:outline-none transition-colors duration-200 ${errors.email ? "border-red-500/50" : "border-white/10 focus:border-[#F59E0B]"}`}
-                        placeholder="james@company.com"
-                      />
-                    </div>
-                    <div>
-                      <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Phone</label>
-                      <input
-                        {...register("phone")}
-                        className="w-full bg-[#0A0E1A] border border-white/10 px-4 py-3.5 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200"
-                        placeholder="+1 (555) 000-0000"
-                      />
-                    </div>
+                  <div>
+                    <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Email *</label>
+                    <input
+                      {...register("email", { required: "Email is required" })}
+                      type="email"
+                      className={`w-full bg-[#0A0E1A] border px-4 py-3.5 text-sm text-white focus:outline-none transition-colors duration-200 ${errors.email ? "border-red-500/50" : "border-white/10 focus:border-[#F59E0B]"}`}
+                      placeholder="james@company.com"
+                    />
                   </div>
                   <div>
                     <label className="font-condensed text-xs tracking-[0.2em] uppercase text-white/40 mb-2 block">Subject</label>
