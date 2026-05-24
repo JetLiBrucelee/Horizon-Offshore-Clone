@@ -126,3 +126,9 @@ id = "dianne-williams-cfo-portrait"
 uri = "file://artifacts/horizon-drilling/public/team/dianne-williams.jpg"
 type = "image"
 title = "dianne williams cfo portrait (user provided)"
+
+[[generated]]
+id = "michael-anderson-ceo-portrait"
+uri = "file://artifacts/horizon-drilling/public/team/michael-anderson.jpg"
+type = "image"
+title = "michael anderson ceo portrait (user provided)"

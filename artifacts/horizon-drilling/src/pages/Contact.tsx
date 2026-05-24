@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Mail, Clock, ArrowRight, Globe } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight, Globe } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useForm } from "react-hook-form";
 
@@ -8,7 +8,8 @@ const offices = [
   {
     city: "San Francisco",
     country: "USA — Headquarters",
-    address: "77 Geary St\nSan Francisco, CA 94108",
+    address: "1728 Union Street, Suite 305\nSan Francisco, CA 94123",
+    phone: "+1 (831) 243-0359",
     email: "support@horizondrillingsco.com",
     hours: "Mon – Fri: 07:00 – 18:00 CST",
   },
@@ -121,7 +122,7 @@ export default function Contact() {
                       <input
                         {...register("name", { required: "Name is required" })}
                         className={`w-full bg-[#0A0E1A] border px-4 py-3.5 text-sm text-white focus:outline-none transition-colors duration-200 ${errors.name ? "border-red-500/50" : "border-white/10 focus:border-[#F59E0B]"}`}
-                        placeholder="James Anderson"
+                        placeholder="Michael Anderson"
                       />
                     </div>
                     <div>
@@ -196,6 +197,12 @@ export default function Contact() {
                         <MapPin size={13} className="text-[#F59E0B] mt-0.5 flex-shrink-0" />
                         <span className="whitespace-pre-line">{office.address}</span>
                       </div>
+                      {office.phone && (
+                        <div className="flex items-center gap-3 text-sm text-white/50">
+                          <Phone size={13} className="text-[#F59E0B] flex-shrink-0" />
+                          <span>{office.phone}</span>
+                        </div>
+                      )}
                       <div className="flex items-center gap-3 text-sm text-white/50">
                         <Mail size={13} className="text-[#F59E0B] flex-shrink-0" />
                         <span>{office.email}</span>

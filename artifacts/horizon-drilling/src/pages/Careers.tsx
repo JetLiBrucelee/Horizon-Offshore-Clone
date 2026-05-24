@@ -260,7 +260,7 @@ export default function Careers() {
                       <input
                         {...register("name", { required: "Full name is required." })}
                         className={`w-full bg-[#0D1629] border px-4 py-3 text-sm text-white focus:border-[#F59E0B] focus:outline-none transition-colors duration-200 ${errors.name ? "border-red-500" : "border-white/10"}`}
-                        placeholder="James Anderson"
+                        placeholder="Michael Anderson"
                       />
                       {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name.message}</p>}
                     </div>

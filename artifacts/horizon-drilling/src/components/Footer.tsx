@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Linkedin, Twitter, Youtube, Instagram, MapPin, Mail, ArrowUpRight } from "lucide-react";
+import { Linkedin, Twitter, Youtube, Instagram, MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 
 const footerLinks = {
   company: [
@@ -111,7 +111,11 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/50 text-sm">
                 <MapPin size={15} className="text-[#F59E0B] mt-0.5 flex-shrink-0" />
-                <span>77 Geary St<br />San Francisco, CA 94108, USA</span>
+                <span>1728 Union Street, Suite 305<br />San Francisco, CA 94123, USA</span>
+              </li>
+              <li className="flex items-center gap-3 text-white/50 text-sm">
+                <Phone size={15} className="text-[#F59E0B] flex-shrink-0" />
+                <span>+1 (831) 243-0359</span>
               </li>
               <li className="flex items-center gap-3 text-white/50 text-sm">
                 <Mail size={15} className="text-[#F59E0B] flex-shrink-0" />
