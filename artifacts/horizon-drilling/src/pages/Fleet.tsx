@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Anchor, Waves, Ship, Wrench, MapPin, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 
 const vessels = [
   {
@@ -104,6 +105,10 @@ const typeIcons: Record<string, typeof Ship> = {
 };
 
 export default function Fleet() {
+  useSEO({
+    title: "Our Fleet | Horizon Drilling & Co",
+    description: "Explore Horizon Drilling & Co's world-class fleet of ultra-deepwater drillships, semi-submersibles, and jack-up rigs operating across the globe.",
+  });
   return (
     <main className="bg-[#0A0E1A] text-white">
       {/* Hero */}

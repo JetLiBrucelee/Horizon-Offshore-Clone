@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://horizondrillingsco.replit.app/sitemap.xml

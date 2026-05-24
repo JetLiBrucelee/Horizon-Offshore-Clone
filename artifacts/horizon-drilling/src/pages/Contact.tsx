@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, ArrowRight, Globe } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useForm } from "react-hook-form";
+import { useSEO } from "@/hooks/useSEO";
 
 const offices = [
   {
@@ -48,6 +49,10 @@ const subjects = [
 ];
 
 export default function Contact() {
+  useSEO({
+    title: "Contact Us | Horizon Drilling & Co",
+    description: "Get in touch with Horizon Drilling & Co. Reach our San Francisco headquarters or offices in Rotterdam, Rio de Janeiro, and Singapore.",
+  });
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);

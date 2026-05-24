@@ -4,6 +4,7 @@ import { MapPin, Clock, ChevronDown, Shield, Globe, Award, Heart, Users, ArrowRi
 import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "wouter";
 import { useForm } from "react-hook-form";
+import { useSEO } from "@/hooks/useSEO";
 
 const benefits = [
   { icon: Shield, title: "World-Class Safety", desc: "Industry-leading safety standards, comprehensive training, and a culture where every person is empowered to stop unsafe work." },
@@ -58,6 +59,10 @@ type FormValues = {
 };
 
 export default function Careers() {
+  useSEO({
+    title: "Careers | Horizon Drilling & Co",
+    description: "Join one of the world's leading offshore drilling companies. Explore open positions in engineering, operations, and more across 38 nations.",
+  });
   const [openGroup, setOpenGroup] = useState<number | null>(0);
   const [submitState, setSubmitState] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");

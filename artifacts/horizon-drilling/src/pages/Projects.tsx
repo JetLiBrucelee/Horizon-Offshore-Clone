@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Calendar, Layers, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 
 type FilterType = "All" | "Drilling" | "FPSO" | "Subsea" | "Completed";
 
@@ -108,6 +109,10 @@ const projects = [
 ];
 
 export default function Projects() {
+  useSEO({
+    title: "Projects | Horizon Drilling & Co",
+    description: "Browse Horizon Drilling & Co's portfolio of completed and active offshore drilling, FPSO, and subsea engineering projects spanning 38 nations.",
+  });
   const [filter, setFilter] = useState<FilterType>("All");
 
   const filtered = filter === "All" ? projects : projects.filter((p) => p.type === filter || (filter === "Completed" && p.status === "Completed"));

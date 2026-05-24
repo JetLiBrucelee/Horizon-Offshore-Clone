@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Drill, Anchor, Waves, Ship, Cpu, BarChart3, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 
 const services = [
   {
@@ -128,6 +129,10 @@ const services = [
 ];
 
 export default function Services() {
+  useSEO({
+    title: "Services | Horizon Drilling & Co",
+    description: "From ultra-deepwater drilling to FPSO solutions, subsea engineering, and digital operations — explore the full range of offshore services from Horizon Drilling & Co.",
+  });
   const [expanded, setExpanded] = useState<number | null>(0);
 
   return (

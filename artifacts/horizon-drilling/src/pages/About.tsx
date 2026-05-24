@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Shield, Zap, Globe, Leaf } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Link } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 
 const PEOPLE_VIDEO = "https://www.sbmoffshore.com/wp-content/uploads/2024/09/SBMO_WEB24_TOP-plans-people_Clip_MINI.mp4";
 
@@ -47,6 +48,10 @@ const values = [
 ];
 
 export default function About() {
+  useSEO({
+    title: "About Us | Horizon Drilling & Co",
+    description: "Founded in 1989, Horizon Drilling & Co has grown from a regional pioneer to a global leader in offshore drilling. Meet our leadership team and discover our story.",
+  });
   return (
     <main className="bg-[#0A0E1A] text-white">
       {/* Hero */}

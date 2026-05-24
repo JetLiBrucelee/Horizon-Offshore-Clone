@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Tag, ArrowRight, Play } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { useSEO } from "@/hooks/useSEO";
 
 const BOOTH_VIDEO = "https://www.sbmoffshore.com/wp-content/uploads/2026/02/seogs_2025_-_booth_video_v1-360p.mp4";
 
@@ -60,6 +61,10 @@ const articles = [
 ];
 
 export default function News() {
+  useSEO({
+    title: "News & Insights | Horizon Drilling & Co",
+    description: "Stay up to date with the latest news, technology updates, sustainability initiatives, and industry insights from Horizon Drilling & Co.",
+  });
   const [filter, setFilter] = useState("All");
   const [videoPlaying, setVideoPlaying] = useState(false);
 

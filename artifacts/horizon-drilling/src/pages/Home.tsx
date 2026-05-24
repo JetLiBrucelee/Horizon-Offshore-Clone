@@ -5,6 +5,7 @@ import VideoHero from "@/components/VideoHero";
 import ParticleCanvas from "@/components/ParticleCanvas";
 import ScrollReveal from "@/components/ScrollReveal";
 import CountUp from "@/components/CountUp";
+import { useSEO } from "@/hooks/useSEO";
 
 const WAVE_VIDEO = "https://www.sbmoffshore.com/wp-content/uploads/2024/09/SBMO_WEB24_TOP-wave_Clip_MINI.mp4";
 
@@ -85,6 +86,10 @@ const news = [
 ];
 
 export default function Home() {
+  useSEO({
+    title: "Horizon Drilling & Co | Offshore Drilling Excellence Since 1989",
+    description: "Horizon Drilling & Co — Ultra-deepwater drilling, FPSO solutions, and subsea engineering across 38 nations. 35+ years of offshore excellence.",
+  });
   return (
     <main className="bg-[#0A0E1A] text-white">
       {/* Hero */}
